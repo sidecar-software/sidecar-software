@@ -1,0 +1,20 @@
+.sidecarText{
+    font-family: rift-soft, sans-serif;
+    height: 100%;
+    width: 100%;
+    fill: var(--color-primary);
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+
+.sidecarText{
+    transition: 
+    height 0.4s ease-out,
+    width 0.4s ease-out;
+}
+
+.collapsed-sidecarText{
+    height: 80px;
+    width: 200px;
+}

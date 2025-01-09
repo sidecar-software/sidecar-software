@@ -1,0 +1,11 @@
+.homeContainer {
+  display: flex;
+}
+
+.homeContainer > div {
+  flex-basis: content;
+}
+
+.homeContainer > div > img {
+  margin: 0 auto;
+}

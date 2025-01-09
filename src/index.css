@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: #191d32;
+    --color-primary: #e8d6cb;
+    --color-seconday: #e1c4b2;
+    --color-warning: #d16666;
+    --color-error: #d34c4c;
+  }
+}
+body {
+  font-family: sans-serif;
+}
+
+div.App {
+  position: relative;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: rift-soft, sans-serif;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: rift-soft, sans-serif;
+  font-size: 2rem;
+}
+h3 {
+  font-family: rift-soft, sans-serif;
+  font-size: 1rem;
+}
+p {
+  padding: 0.5rem;
+}
+
+/* Using box-sizing: border-box globally ensures predictable and manageable layouts, making it a best practice in modern web development. */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-primary);
+  background: var(--color-background);
+  font-family: sans-serif, Arial;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Header Menu */
+.menu li {
+  margin-right: 4px;
+  padding-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-right: 1px solid #ffffff;
+}
+
+.menu li:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+
+nav {
+  z-index: 1000;
+}
