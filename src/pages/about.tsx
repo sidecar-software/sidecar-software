@@ -1,5 +1,6 @@
 import bojan from '../../images/bojan.jpg';
 import honza from '../../images/honza.jpg';
+import karel from '../../images/karel.jpg';
 
 export default function About() {
   return (
@@ -23,6 +24,11 @@ export default function About() {
         <div className="team_member">
           <img src={honza} alt="Team member" width={200} height={200} />
           <h3>Honza Kral</h3>
+          <p>Some short description.</p>
+        </div>
+        <div className="team_member">
+          <img src={karel} alt="Team member" width={200} height={200} />
+          <h3>Karel</h3>
           <p>Some short description.</p>
         </div>
       </div>
