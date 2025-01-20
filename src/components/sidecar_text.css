@@ -1,19 +1,24 @@
 .sidecarText {
   font-family: rift-soft, sans-serif;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
   fill: var(--color-primary);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10rem;
 }
 
 .sidecarText {
-  transition: height 0.4s ease-out, width 0.4s ease-out;
+  transition: 
+    top 0.4s ease-out, 
+    left 0.4s ease-out,
+    font-size 0.4s ease-out,
+    transform 0.4s ease-out;
 }
 
-.collapsed-sidecarText {
-  height: 80px;
-  width: 200px;
+.sidecarText.collapsed {
+  top: 20px;
+  left: 0;
+  transform: none;
+  font-size: 2rem;
 }

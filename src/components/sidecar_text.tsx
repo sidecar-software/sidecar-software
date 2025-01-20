@@ -6,15 +6,17 @@ import { page_links } from "./links";
 export default function SidecarText() {
   const [showUnderscore, setShowUnderscore] = useState(true);
   const [sidecarText, setSidecarText] = useState("");
-  const typeSpeedFast = Object.freeze([50, 100]);
-  const sidecarUltimateText = "Sidecar";
-  const svgRef = useRef<SVGSVGElement>(null);
+  
+  const root_text = "SIDECAR";
+  const type_speed_range = Object.freeze([50, 100]);
+  
   const navigate = useNavigate();
   const location = useLocation(); // get the current location
   const pageName = page_links.find(({ href }) => location.pathname === href)?.label;
   
-  const fullText = pageName ? `${sidecarUltimateText}_${pageName}` : sidecarUltimateText;
+  const fullText = pageName ? `${root_text}_${pageName}` : root_text;
 
+  const divRef = useRef<HTMLDivElement>(null); // create a reference to the div
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,12 +27,14 @@ export default function SidecarText() {
   }, []);
 
   useEffect(() => {
-    // const isLastChar = sidecarText.length === fullText.length - 1;
-    const randomDelay = Math.floor(Math.random() * (typeSpeedFast[1] - typeSpeedFast[0] + 1)) + typeSpeedFast[0];
+    const randomDelay = Math.floor(Math.random() * (type_speed_range[1] - type_speed_range[0] + 1)) + type_speed_range[0];
 
     const timeout = setTimeout(() => {
       setSidecarText(prev => {
-        if (prev === fullText) return prev;
+        if (prev === fullText){
+          // divRef.current?.style.setProperty('--width', (divRef.current.offsetWidth / 2).toString()+"px");
+          return prev;
+        } 
 
         if (prev !== fullText.slice(0, prev.length)) {
           return prev.slice(0, -1);
@@ -41,20 +45,20 @@ export default function SidecarText() {
     }, randomDelay);
 
     return () => clearTimeout(timeout);
-  }, [sidecarText, typeSpeedFast, fullText]);
+  }, [sidecarText, fullText]);
 
   useEffect(() => {
-    if (svgRef.current) {
-      if (location.pathname === "/") {
-        svgRef.current.classList.remove('collapsed-svg');
-      } else {
-        svgRef.current.classList.add('collapsed-svg');
-      }
+    if (divRef.current === null) return;
+
+    if (location.pathname === "/") {
+      divRef.current.classList.remove('collapsed');
+    } else {
+      divRef.current.classList.add('collapsed');
     }
   }, [location.pathname]); // update dependency array to include location.pathname
 
   return (
-    <div className="sidecarText" onClick={() => navigate('/')}>
+    <div ref={divRef} className="sidecarText" onClick={() => navigate('/')}>
       <p>{sidecarText}<span style={{visibility: showUnderscore ? "visible" : "hidden"}}>_</span></p>
     </div>
   );
