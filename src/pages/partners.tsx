@@ -1,8 +1,16 @@
 export default function Partners() {
   return (
     <>
-      <h1>Our Partners</h1>
-      <p>Partners content goes here...</p>
+      <h2>Our partners clients and friends</h2>
+      Kortechs s.r.o.
+      <br />
+      Elastic
+      <br />
+      kiwi.com
+      <br />
+      Revsys
+      <br />
+      mcfarlane.com
     </>
   );
 }
