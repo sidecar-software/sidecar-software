@@ -16,7 +16,7 @@ function App() {
         <div className="p-4 w-full">
           <Navigation />
         </div>
-        <div className="p-4 w-full flex-grow">
+        <div className="p-4 w-full flex-grow mt-14">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="partners" element={<Partners />} />
@@ -27,7 +27,15 @@ function App() {
         </div>
       </div>
       <div className="p-4 w-full">
-        © 2024 Sidecar s.r.o. All Rights Reserved.
+        <div className='flex justify-self-start space-x-4'>
+          Prague - Sidecar s.r.o.<br />
+          Slovinska 15, 101 00 Praha 10<br />
+          Czech Republic<br />
+          +420 725 945 383<br />
+        </div>
+
+        <hr />
+        © 2024 Sidecar s.r.o. All Rights Reserved.<br />
       </div>
     </div>
   )

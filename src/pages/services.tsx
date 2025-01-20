@@ -50,14 +50,10 @@ const SolutionsSection = () => {
   ];
 
   return (
-	<div className="w-full max-w-6xl mx-auto px-4 py-12">
-  	<div className="text-center mb-12">
-    	<h2 className="text-3xl font-bold mb-4">Our Solutions</h2>
-    	<p className="text-lg text-gray-600">
-      	Specialized expertise in Elastic products and data engineering
-    	</p>
-  	</div>
-
+	<>
+	<p>
+	<h2>Specialized expertise in Elastic products and data engineering</h2>
+	</p>
   	<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
     	{solutions.map((solution) => (
       	<Card key={solution.title} className="hover:shadow-lg transition-shadow">
@@ -81,7 +77,7 @@ const SolutionsSection = () => {
       	</Card>
     	))}
   	</div>
-	</div>
+	</>
   );
 };
 
