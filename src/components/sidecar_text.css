@@ -17,8 +17,13 @@
 }
 
 .sidecarText.collapsed {
-  top: 20px;
-  left: 0;
+  top: 2rem;
+  left: 2rem;
   transform: none;
   font-size: 4rem;
+  line-height: 4rem;
+}
+
+.sidecarText.collapsed p {
+  padding: 0;
 }

@@ -10,34 +10,30 @@ import SolutionsSection from './pages/services'
 
 function App() {
   return (
-    <div className="App flex flex-col min-h-screen">
+    <main className="App flex flex-col min-h-screen">
       <SidecarText />
-      <div className="flex flex-col items-center flex-grow">
+      <header className="flex flex-col items-center flex-grow">
         <div className="p-4 w-full">
           <Navigation />
         </div>
-        <div className="p-4 w-full flex-grow mt-14">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="partners" element={<Partners />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<SolutionsSection />} />
-            <Route path="contact_us" element={<ContactUs />} />
-          </Routes>
-        </div>
-      </div>
-      <div className="p-4 w-full">
-        <div className='flex justify-self-start space-x-4'>
-          Prague - Sidecar s.r.o.<br />
-          Slovinska 15, 101 00 Praha 10<br />
-          Czech Republic<br />
-          +420 725 945 383<br />
-        </div>
-
-        <hr />
-        © 2024 Sidecar s.r.o. All Rights Reserved.<br />
-      </div>
-    </div>
+      </header>
+      <section>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="partners" element={<Partners />} />
+          <Route path="about" element={<About />} />
+          <Route path="services" element={<SolutionsSection />} />
+          <Route path="contact_us" element={<ContactUs />} />
+        </Routes>
+      </section>
+      <footer>
+        <p>Prague - Sidecar s.r.o.</p>
+        <p>Slovinska 15, 101 00 Praha 10</p>
+        <p>Czech Republic</p>
+        <p><a href="tel:+420 725 945 383">+420 725 945 383</a></p>
+        <p>© 2024 Sidecar s.r.o. All Rights Reserved.</p>
+      </footer>
+    </main>
   )
 }
 
