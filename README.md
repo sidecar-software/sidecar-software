@@ -1,6 +1,15 @@
-# React + TypeScript + Vite
+# Sidecar Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the codebase for the Sidecar website, built using React, TypeScript, and Vite. It includes hot module replacement (HMR) and some ESLint rules to ensure code quality.
+
+## Features
+
+- Fast and efficient development with Vite
+- Type-safe code with TypeScript
+- Hot Module Replacement (HMR) for a better development experience
+- Linting with ESLint to maintain code quality
+
+## Plugins
 
 Currently, two official plugins are available:
 
@@ -14,15 +23,12 @@ If you are developing a production application, we recommend updating the config
 - Configure the top-level `parserOptions` property like this:
 
 ```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+// ...existing code...
+parserOptions: {
+  project: ['./tsconfig.node.json', './tsconfig.app.json'],
+  tsconfigRootDir: import.meta.dirname,
+},
+// ...existing code...
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,20 +37,21 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+// ...existing code...
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
+  // ...existing code...
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
   },
   rules: {
-    // other rules...
+    // ...existing code...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```
