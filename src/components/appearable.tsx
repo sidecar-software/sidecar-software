@@ -7,7 +7,7 @@ export default function Appearable({ children }: { children: ReactNode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeIn(true);
-    }, 100); // 1 second delay
+    }, 500); // 1 second delay
 
     return () => clearTimeout(timer); // Cleanup the timeout if the component unmounts
   }, []);
