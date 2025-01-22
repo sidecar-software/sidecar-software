@@ -1,10 +1,11 @@
 import bojan from '../../images/bojan.jpg';
 import honza from '../../images/honza.jpg';
 import karel from '../../images/karel.jpg';
+import Appearable from '../components/appearable';
 
 export default function About() {
   return (
-    <>
+    <Appearable>
       <h2>About the team</h2>
       <p>At Sidecar, we’re a tight-knit team of engineers rooted in Prague and connected across Western Europe. 
         Our distributed setup allows us to bring global expertise with a local touch.</p>
@@ -32,6 +33,6 @@ export default function About() {
           <p>Some short description.</p>
         </div>
       </div>
-    </>
+    </Appearable>
   );
 }

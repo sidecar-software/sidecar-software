@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import Appearable from "../components/appearable";
 
 
 export default function ContactUs() {
@@ -40,7 +41,7 @@ export default function ContactUs() {
     }
   };
   return (
-    <div>
+    <Appearable>
       <div className='mx-auto w-full'>
         <div
           className={
@@ -126,6 +127,6 @@ export default function ContactUs() {
             </form>
           </div>
         </div>
-      </div>
+    </Appearable>
   );
 };

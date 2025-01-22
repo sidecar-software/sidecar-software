@@ -1,3 +1,4 @@
+import Appearable from '../components/appearable';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Boxes, Cloud, Activity, GraduationCap } from 'lucide-react';
 
@@ -50,7 +51,7 @@ const SolutionsSection = () => {
   ];
 
   return (
-	<>
+	<Appearable>
 	<h2>Specialized expertise in Elastic products and data engineering</h2>
   	<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
     	{solutions.map((solution) => (
@@ -75,7 +76,7 @@ const SolutionsSection = () => {
       	</Card>
     	))}
   	</div>
-	</>
+	</Appearable>
   );
 };
 
