@@ -1,6 +1,7 @@
 import bojan from '../../images/bojan.jpg';
 import honza from '../../images/honza.jpg';
 import karel from '../../images/karel.jpg';
+import flavio from '../../images/flavio.jpg';
 import Appearable from '../components/appearable';
 
 export default function About() {
@@ -20,7 +21,9 @@ export default function About() {
         <div className="team_member">
           <img src={bojan} alt="Team member" width={200} height={200} />
           <h3>Bojan Jovanovic</h3>
-          <p>Some short description.</p>
+<p>A software developer with over 10 years of experience in the IT industry, passionate about building and scaling remote tech teams.</p>
+<p>An advocate for abstraction and simplicity in technology, always seeking efficient and innovative solutions to complex problems.</p>
+<p>Organizer of Python Belgrade meetups for the past decade and PyCon Balkan conferences in 2018 and 2019. Founder of kortechs.io, which grew to over 300 employees in 8 years.</p>
         </div>
         <div className="team_member">
           <img src={honza} alt="Team member" width={200} height={200} />
@@ -31,6 +34,11 @@ export default function About() {
         <div className="team_member">
           <img src={karel} alt="Team member" width={200} height={200} />
           <h3>Karel</h3>
+          <p>Some short description.</p>
+        </div>
+        <div className="team_member">
+          <img src={flavio} alt="Team member" width={200} height={200} />
+          <h3>Flavio Percoco</h3>
           <p>Some short description.</p>
         </div>
       </div>
