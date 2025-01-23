@@ -18,13 +18,13 @@ export default function About() {
         This unique experience gives us a deep understanding of Elastic’s technology and culture, ensuring we deliver solutions that truly resonate with your needs.</p>
 
       <h2>Meet the people</h2>
-      <div className="flex-container" style={{ display: 'flex', gap: '20px' }}>
+      <div className="team_grid">
         <div className="team_member">
           <img src={bojan} alt="Team member" width={200} height={200} />
           <h3>Bojan Jovanovic</h3>
-<p>A software developer with over 10 years of experience in the IT industry, passionate about building and scaling remote tech teams.</p>
-<p>An advocate for abstraction and simplicity in technology, always seeking efficient and innovative solutions to complex problems.</p>
-<p>Organizer of Python Belgrade meetups for the past decade and PyCon Balkan conferences in 2018 and 2019. Founder of kortechs.io, which grew to over 300 employees in 8 years.</p>
+          <p>A software developer with over 10 years of experience in the IT industry, passionate about building and scaling remote tech teams.</p>
+          <p>An advocate for abstraction and simplicity in technology, always seeking efficient and innovative solutions to complex problems.</p>
+          <p>Organizer of Python Belgrade meetups for the past decade and PyCon Balkan conferences in 2018 and 2019. Founder of kortechs.io, which grew to over 300 employees in 8 years.</p>
         </div>
         <div className="team_member">
           <img src={honza} alt="Team member" width={200} height={200} />
@@ -38,8 +38,7 @@ export default function About() {
           <p>Software Developer & Architect</p>
           <p>Karel is a seasoned developer and designer with over two decades of experience building websites, web applications, and complex systems. Starting in 2000, his expertise spans clean design, robust backends, and balanced business-technical solutions.
           Since joining Elastic in 2012, he has developed official Ruby and Go clients for Elasticsearch and built tools used by Facebook, TED.com, and Shopify. A passionate contributor to open-source projects, Karel also taught programming and data visualization at Charles University in Prague.</p>
-          <p>https://nb.karmi.cz/semantic-search-with-elasticsearch/</p>
-          <p></p>
+          <a href="https://nb.karmi.cz/semantic-search-with-elasticsearch/">Semantic Search with ElasticSearch</a>
         </div>
         <div className="team_member">
           <img src={flavio} alt="Team member" width={200} height={200} />
