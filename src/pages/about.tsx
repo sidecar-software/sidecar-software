@@ -33,8 +33,12 @@ export default function About() {
         </div>
         <div className="team_member">
           <img src={karel} alt="Team member" width={200} height={200} />
-          <h3>Karel</h3>
-          <p>Some short description.</p>
+          <h3> Karel Minařík</h3>
+          <p>Software Developer & Architect</p>
+          <p>Karel is a seasoned developer and designer with over two decades of experience building websites, web applications, and complex systems. Starting in 2000, his expertise spans clean design, robust backends, and balanced business-technical solutions.
+          Since joining Elastic in 2012, he has developed official Ruby and Go clients for Elasticsearch and built tools used by Facebook, TED.com, and Shopify. A passionate contributor to open-source projects, Karel also taught programming and data visualization at Charles University in Prague.</p>
+          <p>https://nb.karmi.cz/semantic-search-with-elasticsearch/</p>
+          <p></p>
         </div>
         <div className="team_member">
           <img src={flavio} alt="Team member" width={200} height={200} />
