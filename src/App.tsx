@@ -27,7 +27,7 @@ function App() {
         </Routes>
       </section>
       <footer>
-        <p>Prague - Sidecar s.r.o.</p>
+        <p><strong>Prague - Sidecar s.r.o.</strong></p>
         <p>Slovinska 15, 101 00 Praha 10</p>
         <p>Czech Republic</p>
         <p><a href="tel:+420 725 945 383">+420 725 945 383</a></p>
