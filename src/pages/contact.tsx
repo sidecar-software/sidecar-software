@@ -42,6 +42,7 @@ export default function ContactUs() {
   };
   return (
     <Appearable>
+      <title>Sidecar :: Contact Us</title>
       <div className='mx-auto w-full'>
         <div
           className={

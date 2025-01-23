@@ -7,6 +7,7 @@ import Appearable from '../components/appearable';
 export default function About() {
   return (
     <Appearable>
+      <title>Sidecar :: About</title>
       <h2>About the team</h2>
       <p>At Sidecar, we’re a tight-knit team of engineers rooted in Prague and connected across Western Europe.
         Our distributed setup allows us to bring global expertise with a local touch.</p>
@@ -43,7 +44,7 @@ export default function About() {
         <div className="team_member">
           <img src={flavio} alt="Team member" width={200} height={200} />
           <h3>Flavio Percoco</h3>
-          <p>Some short description.</p>
+          <p>Flavio Percoco is a Director of Platform Engineering at FLYR for Hospitality, specializing in cloud infrastructure and technology leadership. He has transformed platform architectures, optimized infrastructure costs by 30%, and implemented critical DevOps processes. With prior experience at Red Hat and Elastic, he excels in Kubernetes, multi-cloud strategies, and technical consulting for startup ecosystem development.</p>
         </div>
       </div>
     </Appearable>

@@ -52,6 +52,8 @@ const SolutionsSection = () => {
 
   return (
 	<Appearable>
+	<title>Sidecar :: Services</title>
+
 	<h2>Specialized expertise in Elastic products and data engineering</h2>
   	<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
     	{solutions.map((solution) => (
