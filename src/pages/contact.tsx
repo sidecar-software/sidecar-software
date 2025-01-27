@@ -1,8 +1,12 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import Appearable from "../components/appearable";
 import toast from 'react-hot-toast';
+import './contact.css';
 
 export default function ContactUs() {
+  const url = 'https://sidecartest.free.beeceptor.com';
+  // const url = 'https://api.staticforms.xyz/submit';
+
   const [contact, setContact] = useState({
     name: '',
     email: '',
@@ -24,9 +28,7 @@ export default function ContactUs() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const id = toast.loading("Sending message");
-    const url = 'https://sidecartest.free.beeceptor.com';
-    // const url = 'https://api.staticforms.xyz/submit';
-
+    
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(contact),
@@ -52,7 +54,7 @@ export default function ContactUs() {
           <div>
             <h2>Contact Form</h2>
             <form
-              action='https://api.staticforms.xyz/submit'
+              action={url}
               method='post'
               onSubmit={handleSubmit}
             >
@@ -108,8 +110,15 @@ export default function ContactUs() {
                 </div>
               </div>
               <div>
-                  <button type='submit' className={response.success ? 'success' : ''}>
-                    Submit
+                  <button 
+                    type='submit' 
+                    className={`
+                      btn 
+                      btn-blue
+                      ${response.success ? ' success' : ''}`} 
+                    disabled={response.success}
+                  >
+                    Submit 
                   </button>
               </div>
             </form>
