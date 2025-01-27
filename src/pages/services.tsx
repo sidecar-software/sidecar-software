@@ -1,85 +1,61 @@
 import Appearable from '../components/appearable';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Boxes, Cloud, Activity, GraduationCap } from 'lucide-react';
+import { Boxes, Cloud, Activity, GraduationCap, Box } from 'lucide-react';
 
-const SolutionsSection = () => {
-  const solutions = [
-	{
-  	title: 'Architecture',
-  	description: 'Expert guidance for your application design and infrastructure',
-  	icon: Boxes,
-  	features: [
-    	'Application architecture design',
-    	'Technical consulting services',
-    	'Strategic advisory',
-    	'Best practices implementation'
-  	]
-	},
-	{
-  	title: 'Deployment',
-  	description: 'Seamless deployment using Infrastructure as Code',
-  	icon: Cloud,
-  	features: [
-    	'Cloud deployment expertise',
-    	'On-premise solutions',
-    	'Infrastructure as Code implementation',
-    	'Automated deployment pipelines'
-  	] 
-	},
-	{
-  	title: 'Health Check',
-  	description: 'Comprehensive evaluation of your application environment',
-  	icon: Activity,
-  	features: [
-    	'Performance assessment',
-    	'System diagnostics',
-    	'Issue identification',
-    	'Optimization recommendations'
-  	]
-	},
-	{
-  	title: 'Education',
-  	description: 'Custom workshops and training programs for your team',
-  	icon: GraduationCap,
-  	features: [
-    	'On-demand workshops',
-    	'Hands-on training sessions',
-    	'Customized learning paths',
-    	'Practical exercises and case studies'
-  	]
-	}
-  ];
 
+export default function Services() {
   return (
 	<Appearable>
 	<title>Sidecar :: Services</title>
 
 	<h2>Specialized expertise in Elastic products and data engineering</h2>
-  	<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-    	{solutions.map((solution) => (
-      	<Card key={solution.title} className="hover:shadow-lg transition-shadow">
-        	<CardHeader>
-          	<div className="mb-4">
-            	<solution.icon className="w-12 h-12 text-blue-600" />
-          	</div>
-          	<CardTitle className="text-xl mb-2">{solution.title}</CardTitle>
-          	<CardDescription>{solution.description}</CardDescription>
-        	</CardHeader>
-        	<CardContent>
-          	<ul className="space-y-2">
-            	{solution.features.map((feature) => (
-              	<li key={feature} className="flex items-center">
-                	<div className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-2" />
-                	{feature}
-              	</li>
-            	))}
-          	</ul>
-        	</CardContent>
-      	</Card>
-    	))}
-  	</div>
+
+	<div className="team_grid">
+		<div className="item">
+			<h2>Architecture</h2>
+			<Boxes size={64} />
+			Expert guidance for your application design and infrastructure
+			<ul>
+				<li>Application architecture design</li>
+				<li>Technical consulting services</li>
+				<li>Strategic advisory</li>
+				<li>Best practices implementation</li>
+			</ul>
+		</div>
+		<div className="item">
+			<h2>Deployment</h2>
+			<Cloud size={64} />
+			Seamless deployment using Infrastructure as Code
+			<ul>
+				<li>Cloud deployment expertise</li>
+    			<li>On-premise solutions</li>
+    			<li>Infrastructure as Code implementation</li>
+    			<li>Automated deployment pipelines</li>
+			</ul>
+		</div>
+		<div className="item">
+			<h2>Health Check</h2>
+			<Activity size={64} />
+			Comprehensive evaluation of your application environment
+			<ul>
+				<li>Performance assessment</li>
+				<li>System diagnostics</li>
+				<li>Issue identification</li>
+				<li>Optimization recommendations</li>
+			</ul>
+		</div>
+		<div className="item">
+			<h2>Education</h2>
+			<GraduationCap size={64} />
+			Custom workshops and training programs for your team
+			<ul>
+				<li>On-demand workshops</li>
+				<li>Hands-on training sessions</li>
+				<li>Customized learning paths</li>
+				<li>Practical exercises and case studies</li>
+			</ul>
+		</div>
+	</div>
+
 	</Appearable>
   );
 };
-
-export default SolutionsSection;
