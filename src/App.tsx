@@ -7,10 +7,12 @@ import SidecarText from './components/sidecar_text'
 import About from './pages/about'
 import ContactUs from './pages/contact'
 import SolutionsSection from './pages/services'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   return (
     <main className="App flex flex-col min-h-screen">
+      <div><Toaster /></div>
       <SidecarText />
       <header className="flex flex-col items-center flex-grow">
         <div className="p-4 w-full">

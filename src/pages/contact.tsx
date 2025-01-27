@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import Appearable from "../components/appearable";
-
+import toast from 'react-hot-toast';
 
 export default function ContactUs() {
   const [contact, setContact] = useState({
@@ -23,45 +23,32 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const res = await fetch('https://api.staticforms.xyz/submit', {
-        method: 'POST',
-        body: JSON.stringify(contact),
-        headers: { 'Content-Type': 'application/json' }
-      });
+    const id = toast.loading("Sending message");
+    const url = 'https://sidecartest.free.beeceptor.com';
+    // const url = 'https://api.staticforms.xyz/submit';
 
-      const json = await res.json();
-      setResponse(json);
-    } catch (e) {
-      console.log('An error occurred', e);
-      setResponse({
-        success: false,
-        message: 'An error occured while submitting the form'
-      });
-    }
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(contact),
+      headers: { 'Content-Type': 'application/json' }
+    }).then(async (res) => {
+        const data = await res.json();
+        setResponse(data);
+
+        if (res.ok) {
+          toast.success(data.message, { id });
+        } else {
+          toast.error(data?.message || "Error sending mail", { id });
+        }
+    }).catch((error) => {
+      console.error('Error:', error);
+      toast.error("Error sending mail", { id });
+    })
   };
   return (
     <Appearable>
       <title>Sidecar :: Contact Us</title>
       <div className='mx-auto w-full'>
-        <div
-          className={
-            response.success
-              ? 'success-message'
-              : 'hidden'
-          }
-        >
-          <p>{response.message}</p>
-        </div>
-        <div
-          className={
-            !response.success
-              ? 'failure-message'
-              : 'hidden'
-          }
-        >
-          <p>{response.message}</p>
-        </div>
           <div>
             <h2>Contact Form</h2>
             <form
@@ -121,7 +108,7 @@ export default function ContactUs() {
                 </div>
               </div>
               <div>
-                  <button type='submit'>
+                  <button type='submit' className={response.success ? 'success' : ''}>
                     Submit
                   </button>
               </div>
