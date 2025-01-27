@@ -3,6 +3,7 @@ import honza from '../../images/honza.jpg';
 import karel from '../../images/karel.jpg';
 import flavio from '../../images/flavio.jpg';
 import Appearable from '../components/appearable';
+import { Github, Globe2, Linkedin } from 'lucide-react';
 
 export default function About() {
   return (
@@ -21,27 +22,47 @@ export default function About() {
       <div className="team_grid">
         <div className="team_member">
           <img src={bojan} alt="Team member" width={200} height={200} />
+          <a href="https://www.linkedin.com/in/bojovanovic/"><Linkedin size={32} /></a>
+          <a href="https://github.com/virogenesis"><Github size={32} /></a>
           <h3>Bojan Jovanovic</h3>
-          <p>A software developer with over 10 years of experience in the IT industry, passionate about building and scaling remote tech teams.</p>
+          <p>A software developer with over 15 years of experience in the IT industry, passionate about building and scaling remote tech teams.</p>
           <p>An advocate for abstraction and simplicity in technology, always seeking efficient and innovative solutions to complex problems.</p>
           <p>Organizer of Python Belgrade meetups for the past decade and PyCon Balkan conferences in 2018 and 2019. Founder of kortechs.io, which grew to over 300 employees in 8 years.</p>
+          <h4>Links</h4>
+          <a href="https://kortechs.io">Kortechs.io</a>
+          <a href="https://www.youtube.com/channel/UC4Zfal_sduHM2sIT5Mm9cJA">PyCon Balkan</a>
+          <a href="https://www.youtube.com/@pythonbelgrade9856">Python Belgrade</a>
         </div>
         <div className="team_member">
           <img src={honza} alt="Team member" width={200} height={200} />
+          <a href="https://www.linkedin.com/in/honzakral/"><Linkedin size={32} /></a>
+          <a href="https://github.com/honzakral"><Github size={32} /></a>
+
           <h3>Honza Král</h3>
           <p>Honza is a veteran of the Elastic community, having been involved with the project since its early days, first as a developer and later as a consultant. He has a deep understanding of the Elastic Stack and is passionate about helping clients get the most out of their data.</p>
           <p>After leaving elastic he tried his luck as a startup founder and a platform engineer before returning to his passion - consulting and helping teams get their projects across the finish line.</p>
+          <h4>Public appearences</h4>
+          <a href="https://www.youtube.com/watch?v=02XHM_XvsWs">https://www.youtube.com/watch?v=02XHM_XvsWs</a>
+          <a href="https://www.youtube.com/watch?v=8zu7pomfopc">https://www.youtube.com/watch?v=8zu7pomfopc</a>
+          <a href="https://www.youtube.com/watch?v=Htpbm68SVd8">https://www.youtube.com/watch?v=Htpbm68SVd8</a>
+          <a href="https://www.youtube.com/watch?v=yIixWzjTNog">https://www.youtube.com/watch?v=yIixWzjTNog</a>
         </div>
         <div className="team_member">
           <img src={karel} alt="Team member" width={200} height={200} />
-          <h3> Karel Minařík</h3>
+          <a href="https://www.linkedin.com/in/karelminarik/"><Linkedin size={32} /></a>
+          <a href="https://github.com/karmi"><Github size={32} /></a>
+          <h3>Karel Minařík</h3>
           <p>Software Developer & Architect</p>
           <p>Karel is a seasoned developer and designer with over two decades of experience building websites, web applications, and complex systems. Starting in 2000, his expertise spans clean design, robust backends, and balanced business-technical solutions.
           Since joining Elastic in 2012, he has developed official Ruby and Go clients for Elasticsearch and built tools used by Facebook, TED.com, and Shopify. A passionate contributor to open-source projects, Karel also taught programming and data visualization at Charles University in Prague.</p>
+          <h4>Blog posts</h4>
           <a href="https://nb.karmi.cz/semantic-search-with-elasticsearch/">Semantic Search with ElasticSearch</a>
         </div>
         <div className="team_member">
           <img src={flavio} alt="Team member" width={200} height={200} />
+          <a href="https://www.linkedin.com/in/fpercoco/"><Linkedin size={32} /></a>
+          <a href="https://github.com/flaper87"><Github size={32} /></a>
+          <a href="http://www.flaper87.com"><Globe2 size={32} /></a>
           <h3>Flavio Percoco</h3>
           <p>Flavio Percoco is a Director of Platform Engineering at FLYR for Hospitality, specializing in cloud infrastructure and technology leadership. He has transformed platform architectures, optimized infrastructure costs by 30%, and implemented critical DevOps processes. With prior experience at Red Hat and Elastic, he excels in Kubernetes, multi-cloud strategies, and technical consulting for startup ecosystem development.</p>
         </div>
