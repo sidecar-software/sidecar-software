@@ -32,7 +32,7 @@ export default function ContactUs() {
       body: JSON.stringify(contact),
       headers: { 'Content-Type': 'application/json' }
     }).then(async (res) => {
-      console.log(res);
+      setResponse(await res.json());
     }).catch((error) => {
       console.log(error);
     })
