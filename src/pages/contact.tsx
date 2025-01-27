@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import Appearable from "../components/appearable";
-import toast from 'react-hot-toast';
 import './contact.css';
 
 export default function ContactUs() {
@@ -27,24 +26,15 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const id = toast.loading("Sending message");
     
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(contact),
       headers: { 'Content-Type': 'application/json' }
     }).then(async (res) => {
-        const data = await res.json();
-        setResponse(data);
-
-        if (res.ok) {
-          toast.success(data.message, { id });
-        } else {
-          toast.error(data?.message || "Error sending mail", { id });
-        }
+      console.log(res);
     }).catch((error) => {
-      console.error('Error:', error);
-      toast.error("Error sending mail", { id });
+      console.log(error);
     })
   };
   return (
