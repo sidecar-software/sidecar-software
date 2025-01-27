@@ -1,14 +1,9 @@
-.sidecarText {
-  font-family: rift-soft, sans-serif;
-  fill: var(--color-primary);
+h1 {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 10rem;
-}
-
-.sidecarText {
   transition: 
     top 0.4s ease-out, 
     left 0.4s ease-out,
@@ -16,7 +11,7 @@
     transform 0.4s ease-out;
 }
 
-.sidecarText.collapsed {
+h1.collapsed {
   top: 2rem;
   left: 2rem;
   transform: none;
@@ -24,6 +19,7 @@
   line-height: 4rem;
 }
 
-.sidecarText.collapsed p {
+h1.collapsed p {
   padding: 0;
+  margin: 0;
 }

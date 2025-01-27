@@ -58,8 +58,8 @@ export default function SidecarText() {
   }, [location.pathname]); // update dependency array to include location.pathname
 
   return (
-    <div ref={divRef} className="sidecarText" onClick={() => navigate('/')}>
+    <h1 ref={divRef} onClick={() => navigate('/')}>
       <p>{sidecarText}<span style={{visibility: showUnderscore ? "visible" : "hidden"}}>_</span></p>
-    </div>
+    </h1>
   );
 }

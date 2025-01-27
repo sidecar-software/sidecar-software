@@ -1,36 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap');
 
+:root {
+    --color-background: #191d32;
+    --color-background-2: #1C234A;
+    --color-primary: #e8d6cb;
+    --color-secondary: #CA9270;
+    --color-warning: #d16666;
+    --color-error: #d34c4c;
+}
+
 html,
 body {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
+    background: var(--color-background);
+    background: linear-gradient(45deg, var(--color-background) 50%, var(--color-background-2) 100%);
+    color: var(--color-primary);
+    padding: 0;
+    margin: 0;
+    min-height: 100svh;
+}
+
+h1, h2, h3 {
+    font-family: rift-soft, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
 }
 
 h2 {
-    font-size: 3rem;
-    padding: 2rem 0;
+    font-size: 2rem;
+    padding-bottom: 2rem;
 }
 
 h3 {
-    font-size: 2rem;
-    padding: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    padding-bottom: .5rem;
 }
 
 p {
     padding: 0 0 1rem 0;
 }
 
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+label {
+    width: 100%;
+    font-family: rift-soft, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+    width: 8rem;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    border: none;
+    background-color: var(--color-background-2);
+    color: var(--color-background);
+    border-radius: 5px;
+}
+
+button {
+    width: 8rem;
+    padding: .5rem 1rem;
+    border: none;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+
+}
+
 main {
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - 8rem);
+    padding: 6rem 2rem 2rem 2rem;
 }
 
     header {
-        flex-grow: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: max-content;
     }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 2rem;
+        }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                margin: 0;
+            }
+
+                nav ul li {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                }
+
+                    nav ul li a {
+                        font-family: rift-soft, sans-serif;
+                        font-size: 1.5rem;
+                        padding: 0 1rem .5rem 1rem;
+                        list-style: none;
+                        color: var(--color-secondary);
+                        text-decoration: none;
+                    }
+
+                    nav ul li a:hover {
+                        border-bottom: 2px solid var(--color-secondary);
+                        text-decoration: none;
+                    }
+
+                    nav ul li a.active {
+                        color: var(--color-primary);
+                        border-bottom: 2px solid var(--color-primary);
+                    }
 
     section {
         flex-grow: 1;
-        padding: 2rem 0;
+        padding: 0 0 4rem 0;
     }
 
         .team_grid {

@@ -10,12 +10,10 @@ import SolutionsSection from './pages/services'
 
 function App() {
   return (
-    <main className="App flex flex-col min-h-screen">
+    <main>
       <SidecarText />
-      <header className="flex flex-col items-center flex-grow">
-        <div className="p-4 w-full">
-          <Navigation />
-        </div>
+      <header>
+        <Navigation />
       </header>
       <section>
         <Routes>
