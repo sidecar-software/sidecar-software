@@ -9,11 +9,10 @@ export default function Services() {
 
 	<h2>Specialized expertise in Elastic products and data engineering</h2>
 
-	<div className="team_grid">
+	<div className="team_grid services">
 		<div className="item">
-			<h2>Architecture</h2>
-			<Boxes size={64} />
-			Expert guidance for your application design and infrastructure
+			<h3><Boxes size={32} />Architecture</h3>
+			<strong>Expert guidance for your application design and infrastructure</strong>
 			<ul>
 				<li>Application architecture design</li>
 				<li>Technical consulting services</li>
@@ -22,9 +21,8 @@ export default function Services() {
 			</ul>
 		</div>
 		<div className="item">
-			<h2>Deployment</h2>
-			<Cloud size={64} />
-			Seamless deployment using Infrastructure as Code
+			<h3><Cloud size={32} />Deployment</h3>
+			<strong>Seamless deployment using Infrastructure as Code</strong>
 			<ul>
 				<li>Cloud deployment expertise</li>
     			<li>On-premise solutions</li>
@@ -33,9 +31,8 @@ export default function Services() {
 			</ul>
 		</div>
 		<div className="item">
-			<h2>Health Check</h2>
-			<Activity size={64} />
-			Comprehensive evaluation of your application environment
+			<h3><Activity size={32} />Health Check</h3>
+			<strong>Comprehensive evaluation of your application environment</strong>
 			<ul>
 				<li>Performance assessment</li>
 				<li>System diagnostics</li>
@@ -44,9 +41,8 @@ export default function Services() {
 			</ul>
 		</div>
 		<div className="item">
-			<h2>Education</h2>
-			<GraduationCap size={64} />
-			Custom workshops and training programs for your team
+			<h3><GraduationCap size={32} />Education</h3>
+			<strong>Custom workshops and training programs for your team</strong>
 			<ul>
 				<li>On-demand workshops</li>
 				<li>Hands-on training sessions</li>

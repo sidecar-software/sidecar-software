@@ -26,7 +26,7 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(contact),
@@ -40,80 +40,59 @@ export default function ContactUs() {
   return (
     <Appearable>
       <title>Sidecar :: Contact Us</title>
-      <div className='mx-auto w-full'>
-          <div>
-            <h2>Contact Form</h2>
-            <form
-              action={url}
-              method='post'
-              onSubmit={handleSubmit}
-            >
-              <label>Name</label>
-              <div>
-                <input
-                  className='input'
-                  type='text'
-                  placeholder='Name'
-                  name='name'
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label>Your Email</label>
-                <div>
-                  <input
-                    type='email'
-                    placeholder='Email'
-                    name='email'
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div className='hidden'>
-                <label>Title</label>
-                <div>
-                  <input
-                    type='text'
-                    name='honeypot'
-                    style={{ display: 'none' }}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type='hidden'
-                    name='subject'
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-              <div>
-                <label>Message</label>
-                <div>
-                  <textarea
-                    className='textarea'
-                    placeholder='Your Message'
-                    name='message'
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                  <button 
-                    type='submit' 
-                    className={`
+      <h2>Contact Form</h2>
+      <form
+        action={url}
+        method='post'
+        onSubmit={handleSubmit}
+      >
+        <label>Name</label>
+        <input
+          className='input'
+          type='text'
+          placeholder='Name'
+          name='name'
+          onChange={handleChange}
+          required
+        />
+        <label>Your Email</label>
+        <input
+          type='email'
+          placeholder='Email'
+          name='email'
+          onChange={handleChange}
+          required
+        />
+        <input
+          type='text'
+          name='honeypot'
+          style={{ display: 'none' }}
+          onChange={handleChange}
+        />
+        <input
+          type='hidden'
+          name='subject'
+          onChange={handleChange}
+        />
+        <label>Message</label>
+        <textarea
+          className='textarea'
+          placeholder='Your Message'
+          name='message'
+          onChange={handleChange}
+          required
+        />
+        <button
+          type='submit'
+          className={`
                       btn 
                       btn-blue
-                      ${response.success ? ' success' : ''}`} 
-                    disabled={response.success}
-                  >
-                    Submit 
-                  </button>
-              </div>
-            </form>
-          </div>
-        </div>
+                      ${response.success ? ' success' : ''}`}
+          disabled={response.success}
+        >
+          Submit
+        </button>
+      </form>
     </Appearable>
   );
 };
