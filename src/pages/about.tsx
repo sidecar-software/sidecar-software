@@ -31,7 +31,6 @@ export default function About() {
             <a href="https://github.com/virogenesis"><Github size={24} /></a>
           </div>
           <h4>Links</h4>
-          <a href="https://kortechs.io">Kortechs.io</a>
           <a href="https://www.youtube.com/channel/UC4Zfal_sduHM2sIT5Mm9cJA">PyCon Balkan</a>
           <a href="https://www.youtube.com/@pythonbelgrade9856">Python Belgrade</a>
         </div>
