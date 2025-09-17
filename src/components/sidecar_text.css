@@ -1,4 +1,4 @@
-h1 {
+﻿h1 {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -22,4 +22,50 @@ h1.collapsed {
 h1.collapsed p {
   padding: 0;
   margin: 0;
+}
+
+/* Responsive font sizes for sidecar heading */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 6rem;
+  }
+  
+  h1.collapsed {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 4rem;
+  }
+  
+  h1.collapsed {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+}
+/* Align SidecarText with hamburger button on mobile */
+@media screen and (max-width: 768px) {
+  h1 {
+    top: 1.5rem;
+    left: 1rem; /* place on the left side */
+    transform: none;
+    z-index: 1;
+  }
+
+  h1.collapsed {
+    top: 1.5rem;
+    left: 1rem;
+    transform: none;
+  }
+}
+/* SidecarText left, hamburger right on mobile */
+@media screen and (max-width: 768px) {
+  h1 {
+    top: 1.5rem;
+    left: 1rem;
+    transform: none;
+  }
 }

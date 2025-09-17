@@ -1,6 +1,6 @@
 import './home.css';
 
-let HomePage = () => {
+const HomePage = () => {
     return (
         <>
         <title>Sidecar_</title>
