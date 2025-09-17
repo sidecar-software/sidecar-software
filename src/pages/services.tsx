@@ -1,5 +1,5 @@
 import Appearable from '../components/appearable';
-import { Boxes, Cloud, Activity, GraduationCap, Box } from 'lucide-react';
+import { Boxes, Cloud, Activity, GraduationCap } from 'lucide-react';
 
 
 export default function Services() {
