@@ -1,25 +1,188 @@
-.btn {
-    @apply font-bold py-2 px-4 rounded;
+/* Contact Form Styling */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 1; /* Below navigation */
 }
 
-.btn-blue {
-    @apply bg-blue-500 text-white;
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'rift-soft', sans-serif;
+    color: var(--color-secondary);
 }
 
-.btn-blue:hover {
-    @apply bg-blue-700;
+.contact-form {
+    background: rgba(28, 35, 74, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(202, 146, 112, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1; /* Below navigation */
 }
 
-.btn.success {
-    @apply bg-green-500;
-    animation: success-animation 0.5s ease-in-out;
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
-@keyframes success-animation {
-  from {
-    background-color: #3b82f6; /* blue-500 */
-  }
-  to {
-    background-color: #10b981; /* green-500 */
-  }
+.form-group label {
+    display: block;
+    font-family: 'rift-soft', sans-serif;
+    font-size: 1rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid rgba(202, 146, 112, 0.3);
+    border-radius: 0.5rem;
+    background: rgba(25, 29, 50, 0.8);
+    color: var(--color-primary);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(202, 146, 112, 0.1);
+    background: rgba(25, 29, 50, 0.9);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(232, 214, 203, 0.5);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 0.8rem 2rem;
+    background: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'rift-soft', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: #B8825E;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(202, 146, 112, 0.3);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-button.success {
+    background: #10b981;
+    animation: success-pulse 0.6s ease;
+}
+
+@keyframes success-pulse {
+    0% {
+        transform: scale(1);
+        background: var(--color-secondary);
+    }
+    50% {
+        transform: scale(1.05);
+        background: #10b981;
+    }
+    100% {
+        transform: scale(1);
+        background: #10b981;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .contact-container {
+        padding: 0.5rem 0;
+    }
+    
+    .contact-container h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-form {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem;
+    }
+    
+    .submit-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Success/Error Messages */
+.form-message {
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.85rem;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.form-message.fade-out {
+    opacity: 0;
+}
+
+.form-message.success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+}
+
+.form-message.error {
+    background: rgba(211, 76, 76, 0.1);
+    border: 1px solid rgba(211, 76, 76, 0.3);
+    color: var(--color-error);
 }

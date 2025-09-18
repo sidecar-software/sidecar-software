@@ -27,8 +27,121 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
+/* Base styles */
 h1 {
     font-size: 3rem;
+}
+
+/* Large screens - no changes needed */
+
+/* Medium-large screens (950px - 1200px) */
+@media screen and (max-width: 1200px) and (min-width: 951px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Medium screens (769px - 950px) */
+@media screen and (max-width: 950px) and (min-width: 769px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 1.3rem;
+        padding: 0 0.8rem .5rem 0.8rem;
+    }
+    
+    nav {
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* Small-medium screens (700px - 900px) - where the overlap happens */
+@media screen and (max-width: 900px) and (min-width: 700px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 0 0.6rem .5rem 0.6rem;
+    }
+    
+    nav {
+        padding: 1.2rem 2rem;
+    }
+}
+
+/* Mobile screens (768px and below) */
+@media screen and (max-width: 768px) {
+    nav {
+        justify-content: center;
+    }
+
+    .nav-toggle {
+        display: block;
+        left: auto;
+        right: 1rem;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 4.5rem;
+        left: 0;
+        right: 0;
+        padding: 1rem 2rem;
+        background: rgba(25, 29, 50, 0.95);
+        backdrop-filter: blur(6px);
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        border-top: 1px solid var(--color-secondary);
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 0.75rem 0;
+        font-size: 1.25rem;
+        border-bottom: 1px solid rgba(202, 146, 112, 0.3);
+    }
+
+    nav ul li a.active {
+        border-bottom-color: var(--color-primary);
+    }
+
+    section {
+        padding-top: 2.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        padding-bottom: .75rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+        padding-bottom: .25rem;
+    }
+
+    h4 {
+        font-size: 0.875rem;
+        padding-bottom: .25rem;
+    }
 }
 
 h2 {
@@ -248,15 +361,50 @@ main {
     margin: 0.35rem 0;
 }
 
+/* Add this new breakpoint for medium screens (700-950px) */
+@media screen and (max-width: 950px) and (min-width: 769px) {
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 0 0.8rem .5rem 0.8rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem !important;
+    }
+    
+    nav {
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* Also add a more specific breakpoint for the problematic range */
+@media screen and (max-width: 900px) and (min-width: 700px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 0 0.6rem .5rem 0.6rem;
+    }
+    
+    nav {
+        padding: 1.2rem 2rem;
+    }
+}
+
+/* Existing mobile breakpoint */
 @media screen and (max-width: 768px) {
     nav {
         justify-content: center;
+        z-index: 1000; /* Ensure nav is above everything */
     }
 
     .nav-toggle {
         display: block;
         left: auto;
         right: 1rem;
+        z-index: 1001; /* Above nav */
     }
 
     nav ul {
@@ -271,6 +419,7 @@ main {
         flex-direction: column;
         gap: 0.5rem;
         border-top: 1px solid var(--color-secondary);
+        z-index: 1000; /* Above content */
     }
 
     nav ul.open {
@@ -289,8 +438,10 @@ main {
 
     section {
         padding-top: 2.5rem;
+        z-index: 1; /* Below navigation */
     }
 }
+
 /* Responsive heading sizes for mobile */
 @media screen and (max-width: 768px) {
     h1 {
