@@ -5,6 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/wpr6rez.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- iOS font loading fixes -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Preload fonts for iOS -->
+    <link rel="preload" href="https://use.typekit.net/wpr6rez.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://use.typekit.net/wpr6rez.css"></noscript>
   </head>
   <body>
     <div id="root"></div>
