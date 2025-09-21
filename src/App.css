@@ -9,16 +9,24 @@
     --color-error: #d34c4c;
 }
 
+/* Prevent white background on over-scroll */
+html {
+    background: var(--color-background);
+    overscroll-behavior: none; /* Prevent bounce effect */
+}
+
 html,
 body {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
     background: var(--color-background);
     background: linear-gradient(45deg, var(--color-background) 50%, var(--color-background-2) 100%);
+    background-attachment: fixed; /* Background stays fixed */
     color: var(--color-primary);
     padding: 0;
     margin: 0;
-    min-height: 100svh;
+    min-height: 100vh;
+    min-height: 100svh; /* Safari support */
 }
 
 h1, h2, h3, h4 {
@@ -31,8 +39,6 @@ h1, h2, h3, h4 {
 h1 {
     font-size: 3rem;
 }
-
-/* Large screens - no changes needed */
 
 /* Medium-large screens (950px - 1200px) */
 @media screen and (max-width: 1200px) and (min-width: 951px) {
@@ -57,7 +63,7 @@ h1 {
     }
 }
 
-/* Small-medium screens (700px - 900px) - where the overlap happens */
+/* Small-medium screens (700px - 900px) */
 @media screen and (max-width: 900px) and (min-width: 700px) {
     h1 {
         font-size: 2rem;
@@ -158,14 +164,14 @@ form {
         border: none;
         background-color: var(--color-secondary);
         border-radius: 5px;
-
     }
 
 main {
     display: flex;
     flex-direction: column;
-    min-height: calc(100svh - 8rem);
-    padding: 6rem 2rem 2rem 2rem;
+    min-height: calc(100vh - 0rem);
+    min-height: calc(100svh - 0rem);
+    padding: 6rem 2rem 0 2rem;
 }
 
     header {
@@ -280,6 +286,8 @@ main {
         flex-direction: column;
         gap: 0.25rem;
         text-align: right;
+        margin-top: auto;
+        padding: 2rem 0;
     }
 
         footer p {
@@ -313,7 +321,6 @@ main {
     margin: 0.35rem 0;
 }
 
-/* Add this new breakpoint for medium screens (700-950px) */
 @media screen and (max-width: 950px) and (min-width: 769px) {
     nav ul li a {
         font-size: 1.2rem;
@@ -329,7 +336,6 @@ main {
     }
 }
 
-/* Also add a more specific breakpoint for the problematic range */
 @media screen and (max-width: 900px) and (min-width: 700px) {
     h1 {
         font-size: 2rem !important;
@@ -380,39 +386,44 @@ main {
         border-radius: 2px;
     }
 
-    /* Animation for the navigation menu */
-    .nav-toggle.active .bar:nth-child(1) {
+    /* Hamburger animation */
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
 
-    .nav-toggle.active .bar:nth-child(2) {
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
         opacity: 0;
     }
 
-    .nav-toggle.active .bar:nth-child(3) {
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
+    /* Menu from the top of the screen */
     nav ul {
-        position: absolute;
-        top: 4.5rem;
-        left: 1rem;
-        right: 1rem;
-        padding: 1.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 6rem 2rem 2rem 2rem;
         background: linear-gradient(135deg, 
             rgba(25, 29, 50, 0.98) 0%, 
             rgba(28, 35, 74, 0.98) 100%);
         backdrop-filter: blur(12px);
-        border: 1px solid rgba(202, 146, 112, 0.2);
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
         display: none;
         flex-direction: column;
-        gap: 0;
-        z-index: 1000;
-        transform: translateY(-10px);
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        z-index: 999;
+        transform: translateY(-100%);
         opacity: 0;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     nav ul.open {
@@ -423,19 +434,22 @@ main {
 
     nav ul li {
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     nav ul li a {
         display: block;
-        padding: 1rem 1.5rem;
-        font-size: 1.1rem;
+        padding: 1.2rem 2rem;
+        font-size: 1.3rem;
         font-weight: 500;
         text-align: center;
         color: var(--color-primary);
         background: transparent;
         border: none;
-        border-radius: 10px;
-        margin: 0.25rem 0;
+        border-radius: 12px;
+        margin: 0.5rem 0;
+        width: 200px; /* Fixed width */
         transition: all 0.25s ease;
         position: relative;
         overflow: hidden;
@@ -483,9 +497,30 @@ main {
             rgba(202, 146, 112, 0.15) 100%);
     }
 
-    /* Smooth fade-in animation for the links */
+    nav ul::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: -1;
+    }
+
     nav ul.open li {
-        animation: slideInFromTop 0.3s ease forwards;
+        animation: slideInFromTop 0.4s ease forwards;
+    }
+
+    @keyframes slideInFromTop {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     section {
@@ -494,7 +529,13 @@ main {
     }
 
     main {
-        padding: 4rem 1rem 2rem 1rem;
+        padding: 4rem 1rem 0 1rem;
+        min-height: calc(100vh - 0rem);
+        min-height: calc(100svh - 0rem);
+    }
+
+    footer {
+        padding: 2rem 1rem;
     }
     
     section {
@@ -523,26 +564,24 @@ main {
 
 @media screen and (max-width: 480px) {
     main {
-        padding: 3rem 1rem 1rem 1rem;
+        padding: 3rem 1rem 0 1rem;
     }
     
+    footer {
+        padding: 1.5rem 0.5rem;
+    }
+
     section {
         padding: 0 0 1rem 0;
     }
-}
 
-/* Hamburger animation for the navigation toggle */
-@media screen and (max-width: 768px) {
-    
-    .nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+    nav ul {
+        padding: 5rem 1rem 2rem 1rem;
     }
 
-    .nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+        width: 180px;
     }
 }
