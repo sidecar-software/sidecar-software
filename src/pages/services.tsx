@@ -52,10 +52,12 @@ export default function Services() {
 		</div>
 		<div className="item">
 			<h3><Brain size={32} />AI</h3>
-			<strong>Implementing AI including agentic and custom solutions</strong>
+			<strong>Custom AI applications with advanced workflows and integrations</strong>
 			<ul>
-				<li>MCP</li>
-				<li>Agentic AI</li>
+				<li>RAG implementation</li>
+				<li>Agentic systems development</li>
+				<li>MCP servers and clients</li>
+				<li>Advanced AI workflows</li>
 			</ul>
 		</div>
 	</div>
