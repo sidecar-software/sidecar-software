@@ -9,10 +9,19 @@
     --color-error: #d34c4c;
 }
 
-/* Prevent white background on over-scroll */
 html {
     background: var(--color-background);
-    overscroll-behavior: none; /* Prevent bounce effect */
+}
+
+html::before {
+    content: '';
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    height: 300vh;
+    background: linear-gradient(45deg, var(--color-background) 50%, var(--color-background-2) 100%);
+    z-index: -1;
 }
 
 html,
@@ -21,12 +30,14 @@ body {
     font-weight: 400;
     background: var(--color-background);
     background: linear-gradient(45deg, var(--color-background) 50%, var(--color-background-2) 100%);
-    background-attachment: fixed; /* Background stays fixed */
+    background-attachment: fixed;
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
     color: var(--color-primary);
     padding: 0;
     margin: 0;
     min-height: 100vh;
-    min-height: 100svh; /* Safari support */
+    min-height: 100svh;
 }
 
 h1, h2, h3, h4 {
@@ -169,9 +180,10 @@ form {
 main {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 0rem);
-    min-height: calc(100svh - 0rem);
-    padding: 6rem 2rem 0 2rem;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 6rem 2rem 2rem 2rem;
+    position: relative;
 }
 
     header {
@@ -288,6 +300,9 @@ main {
         text-align: right;
         margin-top: auto;
         padding: 2rem 0;
+        position: relative;
+        z-index: 1;
+        background: inherit;
     }
 
         footer p {
@@ -449,7 +464,7 @@ main {
         border: none;
         border-radius: 12px;
         margin: 0.5rem 0;
-        width: 200px; /* Fixed width */
+        width: 200px;
         transition: all 0.25s ease;
         position: relative;
         overflow: hidden;
@@ -529,13 +544,14 @@ main {
     }
 
     main {
-        padding: 4rem 1rem 0 1rem;
-        min-height: calc(100vh - 0rem);
-        min-height: calc(100svh - 0rem);
+        padding: 4rem 1rem 2rem 1rem;
+        min-height: 100vh;
+        min-height: 100svh;
     }
 
     footer {
         padding: 2rem 1rem;
+        margin-top: auto;
     }
     
     section {
@@ -564,11 +580,12 @@ main {
 
 @media screen and (max-width: 480px) {
     main {
-        padding: 3rem 1rem 0 1rem;
+        padding: 3rem 1rem 2rem 1rem;
     }
     
     footer {
         padding: 1.5rem 0.5rem;
+        margin-top: auto;
     }
 
     section {
