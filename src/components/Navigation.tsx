@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { page_links } from "./links";
 

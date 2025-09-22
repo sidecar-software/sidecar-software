@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useNavigate, useLocation } from "react-router";
+import {  useLocation, useNavigate } from "react-router-dom";
 import './sidecar_text.css';
 import { page_links } from "./links";
 
@@ -57,9 +57,9 @@ export default function SidecarText() {
     }
   }, [location.pathname]); // update dependency array to include location.pathname
 
-  return (
-    <h1 ref={divRef} onClick={() => navigate('/')}>
-      <p>{sidecarText}<span style={{visibility: showUnderscore ? "visible" : "hidden"}}>_</span></p>
-    </h1>
+  return (  
+      <h1 ref={divRef} onClick={() => navigate('/') }>
+        <span>{sidecarText}<span style={{visibility: showUnderscore ? "visible" : "hidden"}}>_</span></span>
+      </h1>
   );
 }

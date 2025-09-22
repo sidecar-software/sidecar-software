@@ -7,6 +7,7 @@
     --color-secondary: #CA9270;
     --color-warning: #d16666;
     --color-error: #d34c4c;
+    --mobile-gutter: 1rem;
 }
 
 html {
@@ -184,6 +185,7 @@ main {
     min-height: 100svh;
     padding: 6rem 2rem 2rem 2rem;
     position: relative;
+    box-sizing: border-box;
 }
 
     header {
@@ -236,7 +238,6 @@ main {
 
     section {
         flex-grow: 1;
-        padding: 0 0 4rem 0;
     }
 
         .team_grid {
@@ -299,7 +300,6 @@ main {
         gap: 0.25rem;
         text-align: right;
         margin-top: auto;
-        padding: 2rem 0;
         position: relative;
         z-index: 1;
         background: inherit;
@@ -376,7 +376,7 @@ main {
     .nav-toggle {
         display: block;
         left: auto;
-        right: 1rem;
+        right: var(--mobile-gutter);
         top: 1.5rem;
         z-index: 1001;
         width: 2rem;
@@ -422,7 +422,7 @@ main {
         right: 0;
         width: 100vw;
         height: 100vh;
-        padding: 6rem 2rem 2rem 2rem;
+        padding: 6rem var(--mobile-gutter) 2rem var(--mobile-gutter);
         background: linear-gradient(135deg, 
             rgba(25, 29, 50, 0.98) 0%, 
             rgba(28, 35, 74, 0.98) 100%);
@@ -544,13 +544,13 @@ main {
     }
 
     main {
-        padding: 4rem 1rem 2rem 1rem;
+        padding: 4rem var(--mobile-gutter) 1.5rem var(--mobile-gutter);
         min-height: 100vh;
         min-height: 100svh;
+        box-sizing: border-box;
     }
 
     footer {
-        padding: 2rem 1rem;
         margin-top: auto;
     }
     
@@ -580,11 +580,11 @@ main {
 
 @media screen and (max-width: 480px) {
     main {
-        padding: 3rem 1rem 2rem 1rem;
+        padding: 3rem var(--mobile-gutter) 1.5rem var(--mobile-gutter);
+        box-sizing: border-box;
     }
     
     footer {
-        padding: 1.5rem 0.5rem;
         margin-top: auto;
     }
 
@@ -593,7 +593,7 @@ main {
     }
 
     nav ul {
-        padding: 5rem 1rem 2rem 1rem;
+        padding: 5rem var(--mobile-gutter) 2rem var(--mobile-gutter);
     }
 
     nav ul li a {
