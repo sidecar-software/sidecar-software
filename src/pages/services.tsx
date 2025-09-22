@@ -1,5 +1,5 @@
 import Appearable from '../components/appearable';
-import { Boxes, Cloud, Activity, GraduationCap } from 'lucide-react';
+import { Boxes, Cloud, Activity, GraduationCap, Brain } from 'lucide-react';
 
 
 export default function Services() {
@@ -7,7 +7,7 @@ export default function Services() {
 	<Appearable>
 	<title>Sidecar :: Services</title>
 
-	<h2>Specialized expertise in Elastic products and data engineering</h2>
+	<h2>Specialized expertise in AI, Elastic products and data engineering</h2>
 
 	<div className="team_grid services">
 		<div className="item">
@@ -48,6 +48,14 @@ export default function Services() {
 				<li>Hands-on training sessions</li>
 				<li>Customized learning paths</li>
 				<li>Practical exercises and case studies</li>
+			</ul>
+		</div>
+		<div className="item">
+			<h3><Brain size={32} />AI</h3>
+			<strong>Implementing AI including agentic and custom solutions</strong>
+			<ul>
+				<li>MCP</li>
+				<li>Agentic AI</li>
 			</ul>
 		</div>
 	</div>
