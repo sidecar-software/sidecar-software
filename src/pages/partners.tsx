@@ -10,7 +10,7 @@ export default function Partners() {
       <title>Sidecar :: Partners</title>
 
       <h2>Our partners, clients and friends</h2>
-      <div className="team_grid">
+      <div className="team_grid partners_grid">
         <div className="item">
           <h3>Kortechs s.r.o.</h3>
           <a href="https://kortechs.io/" target="_blank">Kortechs s.r.o.</a>
