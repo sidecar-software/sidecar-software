@@ -422,7 +422,7 @@ main {
         right: 0;
         width: 100vw;
         height: 100vh;
-        padding: 6rem var(--mobile-gutter) 2rem var(--mobile-gutter);
+        padding: 6rem 0 2rem 0;
         background: linear-gradient(135deg, 
             rgba(25, 29, 50, 0.98) 0%, 
             rgba(28, 35, 74, 0.98) 100%);
@@ -593,7 +593,7 @@ main {
     }
 
     nav ul {
-        padding: 5rem var(--mobile-gutter) 2rem var(--mobile-gutter);
+        padding: 5rem 0 2rem 0;
     }
 
     nav ul li a {
