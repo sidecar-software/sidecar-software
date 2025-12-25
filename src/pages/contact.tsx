@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import Appearable from "../components/appearable";
+import { Mail, User, MessageSquare, Send } from 'lucide-react';
 import './contact.css';
 
 export default function ContactUs() {
@@ -79,83 +80,104 @@ export default function ContactUs() {
 
   return (
     <Appearable>
-      <title>Sidecar :: Contact Us</title>
-      <div className="contact-container">
-        <h2>Contact Form</h2>
-        
-        <div className="contact-form">
-          {response.message && (
-            <div className={`form-message ${response.success ? 'success' : 'error'}`}>
-              {response.success 
-                ? 'Your message has been sent! We will get back to you soon.' 
-                : response.message
-              }
-            </div>
-          )}
+      <title>Sidecar :: Contact</title>
 
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name and Surname</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Enter your name and surname"
-                name="name"
-                value={contact.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
+      <div className="contact_header">
+        <h2>Get In Touch</h2>
+        <p>Have a question or want to work together? We'd love to hear from you.</p>
+      </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Email address</label>
-              <input
-                id="email"
-                type="email" 
-                placeholder="your.email@address.com"
-                name="email"
-                value={contact.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
+      <div className="contact_container">
+        {response.message && (
+          <div className={`form_message ${response.success ? 'success' : 'error'}`}>
+            {response.success
+              ? 'Your message has been sent! We will get back to you soon.'
+              : response.message
+            }
+          </div>
+        )}
 
+        <form className="contact_form" onSubmit={handleSubmit}>
+          <div className="form_group">
+            <label htmlFor="name">
+              <User size={18} />
+              Name
+            </label>
             <input
+              id="name"
               type="text"
-              name="honeypot"
-              value={contact.honeypot}
-              style={{ display: 'none' }}
+              placeholder="Enter your full name"
+              name="name"
+              value={contact.name}
               onChange={handleChange}
+              required
             />
+          </div>
 
+          <div className="form_group">
+            <label htmlFor="email">
+              <Mail size={18} />
+              Email
+            </label>
             <input
-              type="hidden"
-              name="subject"
-              value={contact.subject}
+              id="email"
+              type="email"
+              placeholder="your.email@example.com"
+              name="email"
+              value={contact.email}
               onChange={handleChange}
+              required
             />
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                placeholder="Write your message here..."
-                name="message"
-                value={contact.message}
-                onChange={handleChange}
-                required
-              />
-            </div>
+          <input
+            type="text"
+            name="honeypot"
+            value={contact.honeypot}
+            style={{ display: 'none' }}
+            onChange={handleChange}
+          />
 
-            <button
-              type="submit"
-              className={`submit-button ${response.success ? 'success' : ''}`}
-              disabled={isSubmitting || response.success}
-            >
-              {isSubmitting ? 'Sending...' : response.success ? 'Sent ✓' : 'Send Message'}
-            </button>
-          </form>
-        </div>
+          <input
+            type="hidden"
+            name="subject"
+            value={contact.subject}
+            onChange={handleChange}
+          />
+
+          <div className="form_group">
+            <label htmlFor="message">
+              <MessageSquare size={18} />
+              Message
+            </label>
+            <textarea
+              id="message"
+              placeholder="Tell us about your project or inquiry..."
+              name="message"
+              value={contact.message}
+              onChange={handleChange}
+              required
+              rows={6}
+            />
+          </div>
+
+          <button
+            type="submit"
+            className={`submit_button ${response.success ? 'success' : ''}`}
+            disabled={isSubmitting || response.success}
+          >
+            {isSubmitting ? (
+              <>Sending...</>
+            ) : response.success ? (
+              <>Sent ✓</>
+            ) : (
+              <>
+                Send Message
+                <Send size={18} />
+              </>
+            )}
+          </button>
+        </form>
       </div>
     </Appearable>
   );

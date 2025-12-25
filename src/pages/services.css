@@ -1,0 +1,291 @@
+/* Services Page Styles */
+
+/* Header Section */
+.services_header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.services_header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.services_header p {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* Services Grid */
+.services_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Service Card */
+.service_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(232, 214, 203, 0.05) 0%, rgba(202, 146, 112, 0.05) 100%);
+    border: 1px solid rgba(202, 146, 112, 0.2);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.service_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+        rgba(202, 146, 112, 0.05) 0%,
+        transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service_card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg,
+        var(--color-secondary),
+        rgba(202, 146, 112, 0.5));
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service_card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(202, 146, 112, 0.4);
+    background: linear-gradient(135deg, rgba(232, 214, 203, 0.1) 0%, rgba(202, 146, 112, 0.1) 100%);
+    box-shadow:
+        0 20px 40px rgba(202, 146, 112, 0.15),
+        0 10px 20px rgba(202, 146, 112, 0.1);
+}
+
+.service_card:hover::before {
+    opacity: 1;
+}
+
+.service_card:hover::after {
+    height: 100%;
+}
+
+/* Service Icon */
+.service_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, rgba(202, 146, 112, 0.15) 0%, rgba(232, 214, 203, 0.15) 100%);
+    border: 1px solid rgba(202, 146, 112, 0.3);
+    border-radius: 1rem;
+    color: var(--color-secondary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.service_card:hover .service_icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, rgba(202, 146, 112, 0.25) 0%, rgba(232, 214, 203, 0.25) 100%);
+    border-color: rgba(202, 146, 112, 0.5);
+    box-shadow: 0 8px 20px rgba(202, 146, 112, 0.2);
+}
+
+/* Service Title */
+.service_card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Description */
+.service_description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-primary);
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Features List */
+.service_features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.service_features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--color-secondary);
+    opacity: 0.9;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.service_features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service_card:hover .service_features li::before {
+    transform: translateX(4px);
+}
+
+.service_features li:last-child {
+    margin-bottom: 0;
+}
+
+/* Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .services_grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .services_header h2 {
+        font-size: 2.25rem;
+    }
+
+    .service_card {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services_header {
+        margin-bottom: 3rem;
+    }
+
+    .services_header h2 {
+        font-size: 2rem;
+    }
+
+    .services_header p {
+        font-size: 1.125rem;
+    }
+
+    .services_grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .service_card {
+        padding: 1.75rem;
+    }
+
+    .service_icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 1.25rem;
+    }
+
+    .service_card h3 {
+        font-size: 1.375rem;
+    }
+
+    .service_description {
+        font-size: 0.95rem;
+    }
+
+    .service_features li {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services_header {
+        margin-bottom: 2.5rem;
+    }
+
+    .services_header h2 {
+        font-size: 1.75rem;
+    }
+
+    .services_header p {
+        font-size: 1rem;
+    }
+
+    .services_grid {
+        gap: 1rem;
+    }
+
+    .service_card {
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+    }
+
+    .service_icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1rem;
+    }
+
+    .service_card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .service_description {
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .service_features li {
+        font-size: 0.875rem;
+        margin-bottom: 0.625rem;
+        padding-left: 1.25rem;
+    }
+
+    .service_card:hover {
+        transform: translateY(-4px);
+    }
+}

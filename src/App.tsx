@@ -21,15 +21,15 @@ function App() {
           <Route path="partners" element={<Partners />} />
           <Route path="about" element={<About />} />
           <Route path="services" element={<SolutionsSection />} />
-          <Route path="contact_us" element={<ContactUs />} />
+          <Route path="contact" element={<ContactUs />} />
         </Routes>
       </section>
       <footer>
         <p><strong>Prague - Sidecar s.r.o.</strong></p>
-        <p>Slovinska 15, 101 00 Praha 10</p>
+        <p><a href="https://maps.app.goo.gl/N7UrS5XTEyWN1PZf6" target="_blank" rel="noopener noreferrer">Slovinska 15, 101 00 Praha 10</a></p>
         <p>Czech Republic</p>
         <p><a href="tel:+420 725 945 383">+420 725 945 383</a></p>
-        <p>© 2024 Sidecar s.r.o. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Sidecar s.r.o. All Rights Reserved.</p>
       </footer>
     </main>
   )

@@ -9,12 +9,12 @@ export default function SidecarText() {
   
   const root_text = "SIDECAR";
   const type_speed_range = Object.freeze([50, 100]);
-  
+
   const navigate = useNavigate();
   const location = useLocation(); // get the current location
   const pageName = page_links.find(({ href }) => location.pathname === href)?.label;
-  
-  const fullText = pageName ? `${root_text}_${pageName}` : root_text;
+
+  const fullText = pageName ? `${root_text}>${pageName}` : root_text;
 
   const divRef = useRef<HTMLDivElement>(null); // create a reference to the div
 
@@ -57,9 +57,24 @@ export default function SidecarText() {
     }
   }, [location.pathname]); // update dependency array to include location.pathname
 
-  return (  
+  // Split text to apply color to separator
+  const renderText = () => {
+    const parts = sidecarText.split('>');
+    if (parts.length === 1) {
+      return <>{sidecarText}</>;
+    }
+    return (
+      <>
+        {parts[0]}
+        <span style={{ color: 'var(--color-secondary)' }}>{'>'}</span>
+        {parts[1]}
+      </>
+    );
+  };
+
+  return (
       <h1 ref={divRef} onClick={() => navigate('/') }>
-        <span>{sidecarText}<span style={{visibility: showUnderscore ? "visible" : "hidden"}}>_</span></span>
+        <span>{renderText()}<span style={{visibility: showUnderscore ? "visible" : "hidden"}}>_</span></span>
       </h1>
   );
 }
