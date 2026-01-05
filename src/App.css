@@ -329,6 +329,10 @@ main {
             text-decoration: none;
         }
 
+        footer .company-name {
+            color: var(--color-secondary);
+        }
+
 /* Responsive navigation */
 .nav-toggle {
     display: none;

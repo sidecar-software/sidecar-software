@@ -25,11 +25,11 @@ function App() {
         </Routes>
       </section>
       <footer>
-        <p><strong>Prague - Sidecar s.r.o.</strong></p>
+        <p><strong>Prague - <span className="company-name">Sidecar s.r.o.</span></strong></p>
         <p><a href="https://maps.app.goo.gl/N7UrS5XTEyWN1PZf6" target="_blank" rel="noopener noreferrer">Slovinska 15, 101 00 Praha 10</a></p>
         <p>Czech Republic</p>
         <p><a href="tel:+420 725 945 383">+420 725 945 383</a></p>
-        <p>© {new Date().getFullYear()} Sidecar s.r.o. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} <span className="company-name">Sidecar s.r.o.</span> All Rights Reserved.</p>
       </footer>
     </main>
   )
