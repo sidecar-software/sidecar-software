@@ -1,12 +1,46 @@
+import { useState, useEffect } from 'react';
 import bojan from '../../images/bojan.jpg';
 import honza from '../../images/honza.jpg';
 import karel from '../../images/karel.jpg';
 import flavio from '../../images/flavio.jpg';
 import Appearable from '../components/appearable';
-import { Github, Globe2, Linkedin, ExternalLink } from 'lucide-react';
+import { Github, Globe2, Linkedin, ExternalLink, X } from 'lucide-react';
 import './about.css';
 
 export default function About() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && lightboxOpen) {
+        closeLightbox();
+      }
+    };
+
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', handleEscape);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [lightboxOpen]);
+
+  const openLightbox = (src: string, alt: string) => {
+    setSelectedImage({ src, alt });
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setTimeout(() => setSelectedImage(null), 300);
+  };
+
   return (
     <Appearable>
       <title>Sidecar :: About</title>
@@ -24,7 +58,7 @@ export default function About() {
         <h2>Meet the Team</h2>
         <div className="team_grid">
         <div className="team_member">
-          <div className="member_photo">
+          <div className="member_photo" onClick={() => openLightbox(bojan, "Bojan Jovanovic")}>
             <img src={bojan} alt="Bojan Jovanovic" />
           </div>
           <div className="member_info">
@@ -45,7 +79,7 @@ export default function About() {
           </div>
         </div>
         <div className="team_member">
-          <div className="member_photo">
+          <div className="member_photo" onClick={() => openLightbox(honza, "Honza Král")}>
             <img src={honza} alt="Honza Král" />
           </div>
           <div className="member_info">
@@ -67,7 +101,7 @@ export default function About() {
           </div>
         </div>
         <div className="team_member">
-          <div className="member_photo">
+          <div className="member_photo" onClick={() => openLightbox(karel, "Karel Minařík")}>
             <img src={karel} alt="Karel Minařík" />
           </div>
           <div className="member_info">
@@ -87,7 +121,7 @@ export default function About() {
           </div>
         </div>
         <div className="team_member">
-          <div className="member_photo">
+          <div className="member_photo" onClick={() => openLightbox(flavio, "Flavio Percoco")}>
             <img src={flavio} alt="Flavio Percoco" />
           </div>
           <div className="member_info">
@@ -106,6 +140,19 @@ export default function About() {
         </div>
       </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && selectedImage && (
+        <div className="lightbox_overlay" onClick={closeLightbox}>
+          <button className="lightbox_close" onClick={closeLightbox} aria-label="Close lightbox">
+            <X size={32} />
+          </button>
+          <div className="lightbox_content" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage.src} alt={selectedImage.alt} className="lightbox_image" />
+            <p className="lightbox_caption">{selectedImage.alt}</p>
+          </div>
+        </div>
+      )}
     </Appearable>
   );
 }
