@@ -57,6 +57,11 @@ export default function SidecarText() {
     }
   }, [location.pathname]); // update dependency array to include location.pathname
 
+  // Update document title to match the animated text
+  useEffect(() => {
+    document.title = sidecarText + "_";
+  }, [sidecarText]);
+
   // Split text to apply color to separator
   const renderText = () => {
     const parts = sidecarText.split('>');

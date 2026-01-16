@@ -43,8 +43,6 @@ export default function About() {
 
   return (
     <Appearable>
-      <title>Sidecar :: About</title>
-
       <div className="about_header">
         <h2>About Sidecar</h2>
         <div className="about_intro">

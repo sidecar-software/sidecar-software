@@ -80,8 +80,6 @@ export default function ContactUs() {
 
   return (
     <Appearable>
-      <title>Sidecar :: Contact</title>
-
       <div className="contact_header">
         <h2>Get In Touch</h2>
         <p>Have a question or want to work together? We'd love to hear from you.</p>

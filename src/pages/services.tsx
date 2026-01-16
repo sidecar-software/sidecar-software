@@ -5,8 +5,6 @@ import './services.css';
 export default function Services() {
   return (
 	<Appearable>
-	<title>Sidecar :: Services</title>
-
 	<div className="services_header">
 		<h2>Expert Solutions for Modern Infrastructure</h2>
 		<p>Specialized expertise in AI, Elastic products, and data engineering</p>

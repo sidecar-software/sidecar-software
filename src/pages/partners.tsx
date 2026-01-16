@@ -7,8 +7,6 @@ import revsys from "../assets/revsys-logo.png"
 export default function Partners() {
   return (
     <Appearable>
-      <title>Sidecar :: Partners</title>
-
       <div className="partners_header">
         <h2>Trusted By Industry Leaders</h2>
         <p>Partnering with innovative organizations worldwide</p>
