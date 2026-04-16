@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Link } from 'react-router-dom'
 import './App.css'
 import Partners from './pages/partners'
 import HomePage from './pages/home'
@@ -25,11 +25,33 @@ function App() {
         </Routes>
       </section>
       <footer>
-        <p><strong>Prague - <span className="company-name">Sidecar s.r.o.</span></strong></p>
-        <p><a href="https://maps.app.goo.gl/N7UrS5XTEyWN1PZf6" target="_blank" rel="noopener noreferrer">Slovinska 15, 101 00 Praha 10</a></p>
-        <p>Czech Republic</p>
-        <p><a href="tel:+420 725 945 383">+420 725 945 383</a></p>
-        <p>© {new Date().getFullYear()} <span className="company-name">Sidecar s.r.o.</span> All Rights Reserved.</p>
+        <div className="footer_top">
+          <p className="footer_catchphrase">Open to every<br />search challenge.</p>
+
+          <div className="footer_cols_row">
+            <div className="footer_col">
+              <h4>Navigate</h4>
+              <nav>
+                <Link to="/about">About</Link>
+                <Link to="/services">Services</Link>
+                <Link to="/partners">Partners</Link>
+                <Link to="/contact">Contact</Link>
+              </nav>
+            </div>
+
+            <div className="footer_col">
+              <h4>Find us</h4>
+              <a href="https://maps.app.goo.gl/N7UrS5XTEyWN1PZf6" target="_blank" rel="noopener noreferrer">
+                Slovinska 15<br />101 00 Praha 10<br />Czech Republic
+              </a>
+              <a href="tel:+420725945383" className="footer_phone">+420 725 945 383</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer_bottom">
+          <span>© {new Date().getFullYear()} <span className="company-name">Sidecar s.r.o.</span> All Rights Reserved.</span>
+        </div>
       </footer>
     </main>
   )
