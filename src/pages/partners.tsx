@@ -4,6 +4,8 @@ import kiwi from "../assets/kiwicom-logo.png";
 import semgrep from "../assets/semgrep-logo.png"
 import revsys from "../assets/revsys-logo.png"
 import mcfarlane from "../assets/mcfarlane-logo.webp"
+import blueweb from "../assets/blueweb-logo.svg"
+import elastic from "../assets/elastic-logo.svg"
 
 export default function Partners() {
   return (
@@ -14,9 +16,9 @@ export default function Partners() {
       </div>
 
       <div className="partners_grid">
-        <a href="https://www.elastic.co/" target="_blank" rel="noopener noreferrer" className="partner_card">
-          <div className="partner_content">
-            <span className="partner_name">Elastic</span>
+        <a href="https://www.elastic.co/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
+          <div className="partner_logo">
+            <img src={elastic} alt="Elastic" />
           </div>
         </a>
 
@@ -44,9 +46,9 @@ export default function Partners() {
           </div>
         </a>
 
-        <a href="https://www.blueweb.sk/" target="_blank" rel="noopener noreferrer" className="partner_card">
-          <div className="partner_content">
-            <span className="partner_name">Blueweb</span>
+        <a href="https://www.blueweb.sk/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
+          <div className="partner_logo">
+            <img src={blueweb} alt="Blueweb" />
           </div>
         </a>
       </div>
