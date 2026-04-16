@@ -213,6 +213,42 @@
     color: var(--color-error);
 }
 
+/* Field-level validation errors */
+.field_error {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+    opacity: 0.9;
+}
+
+/* Success state */
+.contact_success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 4rem 2.5rem;
+    color: #10b981;
+    animation: slideInDown 0.5s ease-out;
+}
+
+.contact_success h3 {
+    font-size: 1.75rem;
+    color: #10b981;
+    padding: 0;
+}
+
+.contact_success p {
+    color: var(--color-primary);
+    opacity: 0.7;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+}
+
 /* Animations */
 @keyframes fadeInDown {
     from {
