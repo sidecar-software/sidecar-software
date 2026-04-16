@@ -13,12 +13,6 @@ export default function Partners() {
       </div>
 
       <div className="partners_grid">
-        <a href="https://kortechs.io/" target="_blank" rel="noopener noreferrer" className="partner_card">
-          <div className="partner_content">
-            <span className="partner_name">Kortechs</span>
-          </div>
-        </a>
-
         <a href="https://www.elastic.co/" target="_blank" rel="noopener noreferrer" className="partner_card">
           <div className="partner_content">
             <span className="partner_name">Elastic</span>
