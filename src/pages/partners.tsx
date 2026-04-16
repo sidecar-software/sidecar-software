@@ -1,7 +1,7 @@
 import './partners.css';
 import Appearable from "../components/appearable";
-import kiwi from "../assets/kiwicom-logo.png";
-import semgrep from "../assets/semgrep-logo.png"
+import kiwi from "../assets/kiwicom-logo.svg";
+import semgrep from "../assets/semgrep-logo.svg"
 import revsys from "../assets/revsys-logo.png"
 import mcfarlane from "../assets/mcfarlane-logo.webp"
 import blueweb from "../assets/blueweb-logo.svg"
@@ -26,20 +26,15 @@ export default function Partners() {
 
       <div className="partners_grid">
         {partners.map(({ href, logo, alt, domain }) => (
-          <div key={domain} className="partner_card">
+          <a key={domain} href={href} target="_blank" rel="noopener noreferrer" className="partner_card">
             <div className="partner_logo">
               <img src={logo} alt={alt} />
             </div>
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="partner_link"
-            >
+            <span className="partner_link">
               <span className="partner_link_arrow">↗</span>
               {domain}
-            </a>
-          </div>
+            </span>
+          </a>
         ))}
       </div>
     </Appearable>

@@ -46,6 +46,7 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
+    text-decoration: none;
 }
 
 .partner_card::before {
@@ -142,13 +143,12 @@
     transition: transform 0.3s ease;
 }
 
-.partner_link:hover {
+.partner_card:hover .partner_link {
     opacity: 1;
     color: var(--color-secondary);
-    text-decoration: none;
 }
 
-.partner_link:hover .partner_link_arrow {
+.partner_card:hover .partner_link_arrow {
     transform: translate(2px, -2px);
 }
 
