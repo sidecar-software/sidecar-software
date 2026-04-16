@@ -7,6 +7,15 @@ import mcfarlane from "../assets/mcfarlane-logo.webp"
 import blueweb from "../assets/blueweb-logo.svg"
 import elastic from "../assets/elastic-logo.svg"
 
+const partners = [
+  { href: "https://www.elastic.co/",           logo: elastic,   alt: "Elastic",           domain: "elastic.co"           },
+  { href: "https://www.kiwi.com/",             logo: kiwi,      alt: "kiwi.com",           domain: "kiwi.com"             },
+  { href: "https://www.revsys.com/",           logo: revsys,    alt: "RevSys",             domain: "revsys.com"           },
+  { href: "https://www.mcfarlaneaviation.com/",logo: mcfarlane, alt: "McFarlane Aviation",  domain: "mcfarlaneaviation.com"},
+  { href: "https://semgrep.dev/",              logo: semgrep,   alt: "Semgrep",            domain: "semgrep.dev"          },
+  { href: "https://www.blueweb.sk/",           logo: blueweb,   alt: "Blueweb",            domain: "blueweb.sk"           },
+];
+
 export default function Partners() {
   return (
     <Appearable>
@@ -16,41 +25,22 @@ export default function Partners() {
       </div>
 
       <div className="partners_grid">
-        <a href="https://www.elastic.co/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
-          <div className="partner_logo">
-            <img src={elastic} alt="Elastic" />
+        {partners.map(({ href, logo, alt, domain }) => (
+          <div key={domain} className="partner_card">
+            <div className="partner_logo">
+              <img src={logo} alt={alt} />
+            </div>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="partner_link"
+            >
+              <span className="partner_link_arrow">↗</span>
+              {domain}
+            </a>
           </div>
-        </a>
-
-        <a href="https://www.kiwi.com/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
-          <div className="partner_logo">
-            <img src={kiwi} alt="kiwi.com" />
-          </div>
-        </a>
-
-        <a href="https://www.revsys.com/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
-          <div className="partner_logo">
-            <img src={revsys} alt="Revsys" />
-          </div>
-        </a>
-
-        <a href="https://www.mcfarlaneaviation.com/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
-          <div className="partner_logo">
-            <img src={mcfarlane} alt="McFarlane Aviation" />
-          </div>
-        </a>
-
-        <a href="https://semgrep.dev/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
-          <div className="partner_logo">
-            <img src={semgrep} alt="Semgrep" />
-          </div>
-        </a>
-
-        <a href="https://www.blueweb.sk/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
-          <div className="partner_logo">
-            <img src={blueweb} alt="Blueweb" />
-          </div>
-        </a>
+        ))}
       </div>
     </Appearable>
   );
