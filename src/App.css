@@ -12,6 +12,7 @@
 
 html {
     background: var(--color-background);
+    scrollbar-gutter: stable;
 }
 
 html::before {
