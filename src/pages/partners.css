@@ -121,6 +121,10 @@
     transform: scale(1.06);
 }
 
+.partner_logo img.img_invert {
+    filter: brightness(0) invert(1);
+}
+
 /* Partner Link */
 .partner_link {
     position: relative;
