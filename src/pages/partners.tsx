@@ -3,6 +3,7 @@ import Appearable from "../components/appearable";
 import kiwi from "../assets/kiwicom-logo.png";
 import semgrep from "../assets/semgrep-logo.png"
 import revsys from "../assets/revsys-logo.png"
+import mcfarlane from "../assets/mcfarlane-logo.webp"
 
 export default function Partners() {
   return (
@@ -31,9 +32,9 @@ export default function Partners() {
           </div>
         </a>
 
-        <a href="https://mcfarlane.com/" target="_blank" rel="noopener noreferrer" className="partner_card">
-          <div className="partner_content">
-            <span className="partner_name">McFarlane</span>
+        <a href="https://www.mcfarlaneaviation.com/" target="_blank" rel="noopener noreferrer" className="partner_card partner_card--logo">
+          <div className="partner_logo">
+            <img src={mcfarlane} alt="McFarlane Aviation" />
           </div>
         </a>
 
