@@ -3,18 +3,18 @@ import {  useLocation, useNavigate } from "react-router-dom";
 import './sidecar_text.css';
 import { page_links } from "./links";
 
+const ROOT_TEXT = "SIDECAR";
+const TYPE_SPEED_RANGE = Object.freeze([50, 100]);
+
 export default function SidecarText() {
   const [showUnderscore, setShowUnderscore] = useState(true);
   const [sidecarText, setSidecarText] = useState("");
-  
-  const root_text = "SIDECAR";
-  const type_speed_range = Object.freeze([50, 100]);
 
   const navigate = useNavigate();
   const location = useLocation(); // get the current location
   const pageName = page_links.find(({ href }) => location.pathname === href)?.label;
 
-  const fullText = pageName ? `${root_text}>${pageName}` : root_text;
+  const fullText = pageName ? `${ROOT_TEXT}>${pageName}` : ROOT_TEXT;
 
   const divRef = useRef<HTMLDivElement>(null); // create a reference to the div
 
@@ -27,7 +27,7 @@ export default function SidecarText() {
   }, []);
 
   useEffect(() => {
-    const randomDelay = Math.floor(Math.random() * (type_speed_range[1] - type_speed_range[0] + 1)) + type_speed_range[0];
+    const randomDelay = Math.floor(Math.random() * (TYPE_SPEED_RANGE[1] - TYPE_SPEED_RANGE[0] + 1)) + TYPE_SPEED_RANGE[0];
 
     const timeout = setTimeout(() => {
       setSidecarText(prev => {
