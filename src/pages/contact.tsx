@@ -1,4 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react';
+import { Helmet } from 'react-helmet-async';
 import Appearable from "../components/appearable";
 import { Mail, User, MessageSquare, Send, CheckCircle } from 'lucide-react';
 import './contact.css';
@@ -8,6 +9,13 @@ export default function ContactUs() {
 
   return (
     <Appearable>
+      <Helmet>
+        <title>Contact | Sidecar</title>
+        <meta name="description" content="Get in touch with the Sidecar team. Tell us about your search engineering challenges and we'll figure out how to help." />
+        <meta property="og:title" content="Contact | Sidecar" />
+        <meta property="og:description" content="Get in touch with the Sidecar team. Tell us about your search engineering challenges." />
+        <meta property="og:url" content="https://sidecar.software/#/contact" />
+      </Helmet>
       <div className="contact_header">
         <h2>Get In Touch</h2>
         <p>Have a question or want to work together? We'd love to hear from you.</p>

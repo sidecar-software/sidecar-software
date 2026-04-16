@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import './partners.css';
 import Appearable from "../components/appearable";
 import kiwi from "../assets/kiwicom-logo.svg";
@@ -19,6 +20,13 @@ const partners = [
 export default function Partners() {
   return (
     <Appearable>
+      <Helmet>
+        <title>Partners | Sidecar</title>
+        <meta name="description" content="Sidecar works alongside industry leaders including Elastic, Kiwi.com, Semgrep, RevSys, and more. Trusted by companies across EMEA and North America." />
+        <meta property="og:title" content="Partners | Sidecar" />
+        <meta property="og:description" content="Sidecar works alongside industry leaders including Elastic, Kiwi.com, Semgrep, RevSys, and more." />
+        <meta property="og:url" content="https://sidecar.software/#/partners" />
+      </Helmet>
       <div className="partners_header">
         <h2>Trusted By Industry Leaders</h2>
         <p>Partnering with innovative organizations worldwide</p>

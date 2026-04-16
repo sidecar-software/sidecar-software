@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import bojan from '../../images/bojan.jpg';
 import honza from '../../images/honza.jpg';
 import karel from '../../images/karel.jpg';
@@ -60,6 +61,13 @@ export default function About() {
 
   return (
     <Appearable>
+      <Helmet>
+        <title>About | Sidecar</title>
+        <meta name="description" content="Meet the Sidecar team — seasoned engineers and former Elasticians based in Prague, serving clients across EMEA and North America. Official Elastic Services Partner since 2024." />
+        <meta property="og:title" content="About | Sidecar" />
+        <meta property="og:description" content="Meet the Sidecar team — seasoned engineers and former Elasticians based in Prague, serving clients across EMEA and North America." />
+        <meta property="og:url" content="https://sidecar.software/#/about" />
+      </Helmet>
       <div className="about_header">
         <h2>About Sidecar</h2>
         <div className="about_intro">

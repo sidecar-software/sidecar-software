@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Appearable from '../components/appearable';
 import { GraduationCap, Wrench, Search, CheckCircle, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +9,13 @@ export default function Services() {
 
   return (
     <Appearable>
+      <Helmet>
+        <title>Services | Sidecar</title>
+        <meta name="description" content="Elasticsearch workshops and consulting. Fixed-cost engagements designed to solve your hardest search and infrastructure problems. On-site or remote." />
+        <meta property="og:title" content="Services | Sidecar" />
+        <meta property="og:description" content="Elasticsearch workshops and consulting. Fixed-cost engagements designed to solve your hardest search and infrastructure problems." />
+        <meta property="og:url" content="https://sidecar.software/#/services" />
+      </Helmet>
 
       <div className="services_intro">
         <p className="services_eyebrow">How we work</p>
