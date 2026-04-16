@@ -7,10 +7,12 @@ import SidecarText from './components/sidecar_text'
 import About from './pages/about'
 import ContactUs from './pages/contact'
 import SolutionsSection from './pages/services'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
     <main>
+      <ScrollToTop />
       <SidecarText />
       <header>
         <Navigation />
