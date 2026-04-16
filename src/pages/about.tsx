@@ -3,6 +3,8 @@ import bojan from '../../images/bojan.jpg';
 import honza from '../../images/honza.jpg';
 import karel from '../../images/karel.jpg';
 import flavio from '../../images/flavio.jpg';
+import kieran from '../../images/kieran.png';
+import dan from '../../images/dan.jpeg';
 import Appearable from '../components/appearable';
 import { Globe2, ExternalLink, X } from 'lucide-react';
 function GithubIcon({ size = 20 }: { size?: number }) {
@@ -147,6 +149,38 @@ export default function About() {
                 <a href="https://www.linkedin.com/in/fpercoco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
                 <a href="https://github.com/flaper87" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><GithubIcon size={20} /></a>
                 <a href="http://www.flaper87.com" target="_blank" rel="noopener noreferrer" aria-label="Website"><Globe2 size={20} /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="team_member">
+          <div className="member_photo" onClick={() => openLightbox(kieran, "Kieran Hall")}>
+            <img src={kieran} alt="Kieran Hall" />
+          </div>
+          <div className="member_info">
+            <h3>Kieran Hall</h3>
+            <p className="member_role">Principal Engineer</p>
+            <p className="member_bio">Principal Engineer with 18+ years supporting startups and established organisations across fintech, e-commerce, and platform engineering. Founder-level experience providing senior capacity and leadership for teams designing, stabilising, or evolving critical systems.</p>
+            <p className="member_highlight">Extensive experience in search and observability using Elasticsearch and Apache Lucene, alongside frontend and platform architecture, distributed systems, and cloud infrastructure. Trusted advisor bridging product, engineering, and business concerns.</p>
+            <div className="member_links">
+              <div className="social_links">
+                <a href="https://www.linkedin.com/in/kieranishere/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="team_member">
+          <div className="member_photo" onClick={() => openLightbox(dan, "Dan Palmer-Bancel")}>
+            <img src={dan} alt="Dan Palmer-Bancel" />
+          </div>
+          <div className="member_info">
+            <h3>Dan Palmer-Bancel</h3>
+            <p className="member_role">Principal Engineer</p>
+            <p className="member_bio">Staff and Principal roles from seed-stage startups to global infrastructure and SaaS companies, including scaling through hypergrowth toward and beyond successful IPO at Elastic.</p>
+            <p className="member_highlight">Technical leadership on critical projects including streaming infrastructure for the London 2012 Olympic Games and online operations for the BBC and the UK's major airports. Deep expertise across the platform stack, from architecture and cloud transformation through to security modelling, observability, and cost optimisation.</p>
+            <div className="member_links">
+              <div className="social_links">
+                <a href="https://www.linkedin.com/in/danpalmerbancel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
               </div>
             </div>
           </div>
