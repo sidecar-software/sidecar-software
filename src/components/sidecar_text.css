@@ -1,21 +1,22 @@
 ﻿h1 {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 10vw;
+  width: 80vw;
   font-size: 10rem;
   cursor: pointer;
   z-index: 100;
-  transition: 
-    top 0.4s ease-out, 
+  transition:
+    top 0.4s ease-out,
     left 0.4s ease-out,
-    font-size 0.4s ease-out,
-    transform 0.4s ease-out;
+    width 0.4s ease-out,
+    font-size 0.4s ease-out;
 }
 
 h1.collapsed {
   top: 2rem;
   left: 2rem;
+  width: auto;
   transform: none;
   font-size: 4rem;
   line-height: 4rem;
@@ -57,7 +58,9 @@ h1.collapsed p {
     z-index: 1001;
   }
 }
-/* SidecarText left, hamburger right on mobile */
+/* Break suffix onto a new line on mobile (fullscreen/home only) */
 @media screen and (max-width: 768px) {
-  /* no overrides for non-collapsed state on mobile; keep centered */
+  h1:not(.collapsed) .sidecar_suffix {
+    display: block;
+  }
 }

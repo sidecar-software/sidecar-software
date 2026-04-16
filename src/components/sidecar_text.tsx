@@ -5,7 +5,7 @@ import { page_links } from "./links";
 
 // Words to cycle through on the home page
 const cycleWords = ["opensearch", "elasticsearch", "terraform", "k8s", "n8n", "siem", "mb", "kibana", "agentics"].map(word => word.toUpperCase());
-const CYCLE_HOLD_MS = 2000; // how long to pause before switching words
+const CYCLE_HOLD_MS = 500; // how long to pause before switching words
 
 export default function SidecarText() {
   const [showUnderscore, setShowUnderscore] = useState(true);
@@ -81,14 +81,16 @@ export default function SidecarText() {
     document.title = sidecarText + "_";
   }, [sidecarText]);
 
+  const underscore = <span style={{ visibility: showUnderscore ? "visible" : "hidden" }}>_</span>;
+
   const renderText = () => {
     const parts = sidecarText.split('>');
-    if (parts.length === 1) return <>{sidecarText}</>;
+    if (parts.length === 1) return <>{sidecarText}{underscore}</>;
     return (
       <>
         {parts[0]}
         <span style={{ color: 'var(--color-secondary)' }}>{'>'}</span>
-        {parts[1]}
+        <span className="sidecar_suffix">{parts[1]}{underscore}</span>
       </>
     );
   };
@@ -97,7 +99,6 @@ export default function SidecarText() {
     <h1 ref={divRef} onClick={() => navigate('/')}>
       <span>
         {renderText()}
-        <span style={{ visibility: showUnderscore ? "visible" : "hidden" }}>_</span>
       </span>
     </h1>
   );
