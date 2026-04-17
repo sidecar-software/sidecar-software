@@ -4,7 +4,7 @@ import './sidecar_text.css';
 import { page_links } from "./links";
 
 // Words to cycle through on the home page
-const cycleWords = ["opensearch", "elasticsearch", "terraform", "k8s", "n8n", "siem", "mb", "kibana", "agentics", "observability", "ecommerce", "training", "consulting", "search", "devops"].map(word => word.toUpperCase());
+const cycleWords = ["elasticsearch", "opensearch", "terraform", "k8s", "n8n", "siem", "mb", "kibana", "agentics", "observability", "ecommerce", "training", "consulting", "search", "devops"].map(word => word.toUpperCase());
 const CYCLE_HOLD_MS = 500; // how long to pause before switching words
 
 export default function SidecarText() {
