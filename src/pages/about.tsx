@@ -114,6 +114,7 @@ export default function About() {
               <div className="social_links">
                 <a href="https://www.linkedin.com/in/honzakral/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
                 <a href="https://github.com/honzakral" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><GithubIcon size={20} /></a>
+                <a href="https://www.elastic.co/search-labs/author/honza-kral" target="_blank" rel="noopener noreferrer" aria-label="Blog"><Globe2 size={20} /></a>
               </div>
               <div className="external_links">
                 <a href="https://www.youtube.com/watch?v=02XHM_XvsWs" target="_blank" rel="noopener noreferrer">Talk: Elasticsearch Beyond <ExternalLink size={14} /></a>
