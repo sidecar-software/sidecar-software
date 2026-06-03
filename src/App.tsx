@@ -7,6 +7,7 @@ import SidecarText from './components/sidecar_text'
 import About from './pages/about'
 import ContactUs from './pages/contact'
 import SolutionsSection from './pages/services'
+import Blog from './pages/blog'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="partners" element={<Partners />} />
           <Route path="about" element={<About />} />
           <Route path="services" element={<SolutionsSection />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<ContactUs />} />
         </Routes>
       </section>
@@ -37,6 +39,7 @@ function App() {
                 <Link to="/about">About</Link>
                 <Link to="/services">Services</Link>
                 <Link to="/partners">Partners</Link>
+                <Link to="/blog">Blog</Link>
                 <Link to="/contact">Contact</Link>
               </nav>
             </div>
