@@ -11,13 +11,13 @@ import Blog from './pages/blog'
 import ScrollToTop from './components/ScrollToTop'
 import opensearchFoundation from './assets/opensearch-foundation-logo.png'
 
-function OpenSearchPartnerBadge() {
+function OpenSearchMemberBadge() {
   return (
     <>
       <span className="footer_partner_divider"></span>
       <div className="footer_partner_row">
         <img src={opensearchFoundation} alt="OpenSearch" className="footer_partner_logo" />
-        <span className="footer_partner_text">Official OpenSearch Partner</span>
+        <span className="footer_partner_text">OpenSearch Software Foundation Member</span>
       </div>
     </>
   )
@@ -47,7 +47,7 @@ function App() {
             <p className="footer_catchphrase">Open to every<br />search challenge.</p>
 
             <div className="footer_partner footer_partner--inline">
-              <OpenSearchPartnerBadge />
+              <OpenSearchMemberBadge />
             </div>
           </div>
 
@@ -74,7 +74,7 @@ function App() {
         </div>
 
         <div className="footer_partner footer_partner--standalone">
-          <OpenSearchPartnerBadge />
+          <OpenSearchMemberBadge />
         </div>
 
         <div className="footer_bottom">

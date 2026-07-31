@@ -31,6 +31,49 @@
     margin: 0 auto;
 }
 
+/* Featured Partners Grid */
+.partners_grid--featured {
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    margin-bottom: 4rem;
+}
+
+/* Companies Section Header */
+.companies_header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.companies_header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    letter-spacing: -0.01em;
+}
+
+/* Role Badge */
+.partner_role_badge {
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    background: rgba(202, 146, 112, 0.15);
+    border: 1px solid rgba(202, 146, 112, 0.3);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    white-space: nowrap;
+}
+
+.partner_card--featured {
+    min-height: 220px;
+}
+
 /* Partner Card */
 .partner_card {
     position: relative;
@@ -175,6 +218,10 @@
         gap: 1.5rem;
     }
 
+    .partners_grid--featured {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
     .partners_header h2 {
         font-size: 2.25rem;
     }
@@ -201,6 +248,18 @@
     .partners_grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.25rem;
+    }
+
+    .partners_grid--featured {
+        margin-bottom: 3rem;
+    }
+
+    .companies_header {
+        margin-bottom: 2rem;
+    }
+
+    .companies_header h3 {
+        font-size: 1.25rem;
     }
 
     .partner_card {
