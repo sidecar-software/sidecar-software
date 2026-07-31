@@ -58,9 +58,9 @@ export default function Partners() {
         <h3>Companies We've Worked With</h3>
       </div>
 
-      <div className="partners_grid">
+      <div className="partners_grid partners_grid--companies">
         {companies.map(({ href, logo, alt, domain, invert }) => (
-          <a key={domain} href={href} target="_blank" rel="noopener noreferrer" className="partner_card">
+          <a key={domain} href={href} target="_blank" rel="noopener noreferrer" className="partner_card partner_card--compact">
             <div className="partner_logo">
               <img src={logo} alt={alt} className={invert ? 'img_invert' : ''} />
             </div>
