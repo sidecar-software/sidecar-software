@@ -52,10 +52,6 @@
 
 /* Role Badge */
 .partner_role_badge {
-    position: absolute;
-    top: 1.25rem;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1;
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.65rem;
@@ -71,7 +67,22 @@
 }
 
 .partner_card--featured {
-    min-height: 220px;
+    min-height: 170px;
+    padding: 2rem 1.75rem 1.5rem;
+    gap: 1rem;
+}
+
+.partner_card--featured .partner_logo {
+    flex: none;
+}
+
+.partner_card--featured .partner_logo img {
+    max-width: 150px;
+    max-height: 80px;
+}
+
+.partner_card--featured .partner_link {
+    margin-top: 0;
 }
 
 /* Companies Grid (secondary, less prominent) */
@@ -260,6 +271,10 @@
         padding: 2.5rem 2rem;
     }
 
+    .partner_card--featured {
+        gap: 1.1rem;
+    }
+
     .partner_card--compact {
         min-height: 100px;
         padding: 1.25rem 1rem 1rem;
@@ -299,6 +314,10 @@
     .partner_card {
         min-height: 160px;
         padding: 2rem 1.5rem;
+    }
+
+    .partner_card--featured {
+        gap: 1rem;
     }
 
     .partner_logo img {
@@ -344,6 +363,10 @@
         min-height: 140px;
         padding: 1.75rem 1.25rem;
         border-radius: 1.25rem;
+    }
+
+    .partner_card--featured {
+        gap: 0.85rem;
     }
 
     .partner_logo img {
