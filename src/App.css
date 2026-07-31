@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap');
 
 :root {
+    color-scheme: dark;
     --color-background: #191d32;
     --color-background-2: #1C234A;
     --color-primary: #e8d6cb;
