@@ -9,6 +9,19 @@ import ContactUs from './pages/contact'
 import SolutionsSection from './pages/services'
 import Blog from './pages/blog'
 import ScrollToTop from './components/ScrollToTop'
+import opensearchFoundation from './assets/opensearch-foundation-logo.png'
+
+function OpenSearchPartnerBadge() {
+  return (
+    <>
+      <span className="footer_partner_divider"></span>
+      <div className="footer_partner_row">
+        <img src={opensearchFoundation} alt="OpenSearch" className="footer_partner_logo" />
+        <span className="footer_partner_text">Official OpenSearch Partner</span>
+      </div>
+    </>
+  )
+}
 
 function App() {
   return (
@@ -30,7 +43,13 @@ function App() {
       </section>
       <footer>
         <div className="footer_top">
-          <p className="footer_catchphrase">Open to every<br />search challenge.</p>
+          <div className="footer_catchphrase_col">
+            <p className="footer_catchphrase">Open to every<br />search challenge.</p>
+
+            <div className="footer_partner footer_partner--inline">
+              <OpenSearchPartnerBadge />
+            </div>
+          </div>
 
           <div className="footer_cols_row">
             <div className="footer_col">
@@ -52,6 +71,10 @@ function App() {
               <a href="tel:+420725945383" className="footer_phone">+420 725 945 383</a>
             </div>
           </div>
+        </div>
+
+        <div className="footer_partner footer_partner--standalone">
+          <OpenSearchPartnerBadge />
         </div>
 
         <div className="footer_bottom">
