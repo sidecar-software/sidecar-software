@@ -76,10 +76,13 @@ export default function SidecarText() {
     }
   }, [location.pathname]);
 
-  // Update document title
+  // Update document title — independent of the typewriter animation state,
+  // so search engines and browser tabs never see a mid-animation frame.
   useEffect(() => {
-    document.title = sidecarText + "_";
-  }, [sidecarText]);
+    document.title = pageName
+      ? `Sidecar | ${pageName}`
+      : "Sidecar | Elasticsearch & Search Engineering Experts";
+  }, [pageName]);
 
   const underscore = <span style={{ visibility: showUnderscore ? "visible" : "hidden" }}>_</span>;
 
