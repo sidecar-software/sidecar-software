@@ -43,10 +43,16 @@ export default function Navigation() {
               className={({ isActive }) => (isActive ? "active" : undefined)}
               onClick={() => setIsMenuOpen(false)}
             >
+              {/* Prompt and cursor only show in the mobile terminal-style menu */}
+              <span className="nav_prompt" aria-hidden="true">&gt;</span>
               {label}
+              <span className="nav_cursor" aria-hidden="true">_</span>
             </NavLink>
           </li>
         ))}
+        <li className="nav_tagline" aria-hidden="true">
+          Open to every<br />search challenge.
+        </li>
       </ul>
     </nav>
   );
