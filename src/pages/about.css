@@ -1,13 +1,11 @@
 /* About Page Styles */
 
 /* Team Section */
+/* Match the page intro title (.page_intro h2) */
 .team_section > h2 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    line-height: 1.1;
     text-align: center;
-    letter-spacing: -0.02em;
 }
 
 /* Team Grid Override */
@@ -320,19 +318,9 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
-
-    .team_section > h2 {
-        font-size: 2rem;
-    }
-
 }
 
 @media screen and (max-width: 768px) {
-    .team_section > h2 {
-        font-size: 1.75rem;
-        margin-bottom: 2.5rem;
-    }
-
     .team_section .team_grid {
         grid-template-columns: 1fr;
         gap: 1.75rem;
@@ -361,11 +349,6 @@
 }
 
 @media screen and (max-width: 480px) {
-    .team_section > h2 {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
     .team_section .team_grid {
         gap: 1.5rem;
     }

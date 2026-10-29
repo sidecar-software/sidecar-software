@@ -11,6 +11,11 @@
     padding: 0;
 }
 
+/* Last section sits directly above the footer, which has its own spacing */
+.community_section {
+    margin-bottom: 0;
+}
+
 .section_title {
     font-size: 1.1rem;
     font-weight: 600;
