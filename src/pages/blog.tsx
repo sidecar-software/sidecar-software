@@ -37,6 +37,11 @@ const talks = [
   { id: 'U8whfTS3G8U', title: 'RuPy 2012: Ruby and Elasticsearch',                              date: '2012',              venue: 'RuPy Conference' },
 ];
 
+const communities = [
+  { name: 'Python Belgrade',           location: 'Belgrade, Serbia',       url: 'https://www.meetup.com/pythonbelgrade/',          summary: 'Python fans and working developers sharing knowledge and learning from each other\'s experience.' },
+  { name: 'OpenSearch Project Prague', location: 'Prague, Czech Republic', url: 'https://www.meetup.com/opensearch-project-prague/', summary: 'Search engineering, open source search and relevancy, with talks spanning logging, AI and observability.' },
+];
+
 export default function Blog() {
   return (
     <Appearable>
@@ -111,6 +116,27 @@ export default function Blog() {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="community_section">
+        <h3 className="section_title">Community</h3>
+        <div className="community_grid">
+          {communities.map((community) => (
+            <a key={community.url} href={community.url} target="_blank" rel="noopener noreferrer" className="standalone_card">
+              <div className="standalone_content">
+                <div className="standalone_top">
+                  <h4>{community.name}</h4>
+                  <ExternalLink size={16} className="standalone_icon" />
+                </div>
+                <p className="standalone_summary">{community.summary}</p>
+                <div className="standalone_footer">
+                  <span className="standalone_author">{community.location}</span>
+                  <span className="standalone_date">Meetup</span>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </section>
