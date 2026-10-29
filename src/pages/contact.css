@@ -1,29 +1,5 @@
 /* Contact Page Styles */
 
-/* Header Section */
-.contact_header {
-    text-align: center;
-    margin-bottom: 3rem;
-    animation: fadeInDown 0.8s ease-out;
-}
-
-.contact_header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-
-.contact_header p {
-    font-size: 1.25rem;
-    color: var(--color-primary);
-    opacity: 0.8;
-    font-weight: 400;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 /* Contact Container */
 .contact_container {
     max-width: 700px;
@@ -370,18 +346,6 @@
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .contact_header {
-        margin-bottom: 2.5rem;
-    }
-
-    .contact_header h2 {
-        font-size: 2rem;
-    }
-
-    .contact_header p {
-        font-size: 1.125rem;
-    }
-
     .contact_form {
         padding: 2rem;
         border-radius: 1.25rem;
@@ -418,18 +382,6 @@
 }
 
 @media screen and (max-width: 480px) {
-    .contact_header {
-        margin-bottom: 2rem;
-    }
-
-    .contact_header h2 {
-        font-size: 1.75rem;
-    }
-
-    .contact_header p {
-        font-size: 1rem;
-    }
-
     .contact_form {
         padding: 1.5rem;
         border-radius: 1rem;

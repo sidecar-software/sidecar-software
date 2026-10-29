@@ -1,0 +1,59 @@
+/* Shared intro block used at the top of every inner page */
+
+.page_intro {
+    margin-bottom: 5rem;
+}
+
+.page_intro_eyebrow {
+    font-family: rift-soft, sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    opacity: 0.7;
+    padding-bottom: 0.75rem;
+}
+
+.page_intro h2 {
+    padding-bottom: 1.5rem;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.page_intro h2:last-child {
+    padding-bottom: 0;
+}
+
+.page_intro_lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-primary);
+    opacity: 0.85;
+    padding-bottom: 0;
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Tuck the eyebrow directly under the collapsed SIDECAR logo, as it sits on
+   mobile: the logo ends at 6rem, content otherwise starts at 9rem. */
+@media screen and (min-width: 769px) {
+    .page_intro {
+        margin-top: -3rem;
+    }
+
+    .page_intro_eyebrow {
+        font-size: 1.5rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page_intro {
+        margin-bottom: 3rem;
+    }
+
+    .page_intro_lead {
+        font-size: 1rem;
+    }
+}

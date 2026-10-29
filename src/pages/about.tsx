@@ -7,6 +7,7 @@ import flavio from '../../images/flavio.jpg';
 import kieran from '../../images/kieran.png';
 import dan from '../../images/dan.jpeg';
 import Appearable from '../components/appearable';
+import PageIntro from '../components/page_intro';
 import { Globe2, ExternalLink, X } from 'lucide-react';
 function GithubIcon({ size = 20 }: { size?: number }) {
   return (
@@ -68,13 +69,13 @@ export default function About() {
         <meta property="og:description" content="Meet the Sidecar team — seasoned engineers and former Elasticians based in Prague, serving clients across EMEA and North America." />
         <meta property="og:url" content="https://sidecar.software/#/about" />
       </Helmet>
-      <div className="about_header">
-        <h2>About Sidecar</h2>
-        <div className="about_intro">
-          <p>We're a tight-knit team of seasoned engineers based in Prague, with expertise spanning across Western Europe. Our distributed setup combines global technical excellence with personalized service.</p>
-          <p>As an official <strong>Elastic Services Partner since 2024</strong>, we bring deep technical expertise to every engagement. Many of our team members are former Elasticians who worked at the company during its formative years, giving us unparalleled insight into the Elastic Stack and ecosystem.</p>
-          <p>We primarily serve clients across EMEA and North America, but our capabilities extend worldwide.</p>
-        </div>
+
+      <PageIntro eyebrow="Who we are" title="About Sidecar" />
+
+      <div className="about_intro">
+        <p>We're a tight-knit team of seasoned engineers based in Prague, with expertise spanning across Western Europe. Our distributed setup combines global technical excellence with personalized service.</p>
+        <p>As an official <strong>Elastic Services Partner since 2024</strong>, we bring deep technical expertise to every engagement. Many of our team members are former Elasticians who worked at the company during its formative years, giving us unparalleled insight into the Elastic Stack and ecosystem.</p>
+        <p>We primarily serve clients across EMEA and North America, but our capabilities extend worldwide.</p>
       </div>
 
       <div className="team_section">

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import './partners.css';
 import Appearable from "../components/appearable";
+import PageIntro from '../components/page_intro';
 import kiwi from "../assets/kiwicom-logo.svg";
 import semgrep from "../assets/semgrep-logo.svg"
 import revsys from "../assets/revsys-logo.png"
@@ -34,10 +35,11 @@ export default function Partners() {
         <meta property="og:description" content="Sidecar is an official Elastic partner and a member of the OpenSearch Software Foundation and the Linux Foundation." />
         <meta property="og:url" content="https://sidecar.software/#/partners" />
       </Helmet>
-      <div className="partners_header">
-        <h2>Trusted By Industry Leaders</h2>
-        <p>Partnering with innovative organizations worldwide</p>
-      </div>
+      <PageIntro
+        eyebrow="Our network"
+        title="Trusted by industry leaders"
+        lead="Partnering with innovative organizations worldwide."
+      />
 
       <div className="partners_grid partners_grid--featured">
         {featuredPartners.map(({ href, logo, alt, domain, invert, role }) => (

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { ExternalLink } from 'lucide-react';
 import Appearable from '../components/appearable';
+import PageIntro from '../components/page_intro';
 import './blog.css';
 
 const ecommerceSeries = {
@@ -47,10 +48,11 @@ export default function Blog() {
         <meta property="og:url" content="https://sidecar.software/#/blog" />
       </Helmet>
 
-      <div className="blog_header">
-        <h2>Blog &amp; Talks</h2>
-        <p>Writing and conference talks from the Sidecar team</p>
-      </div>
+      <PageIntro
+        eyebrow="What we share"
+        title="Blog & Talks"
+        lead="Writing and conference talks from the Sidecar team."
+      />
 
       <section className="blog_section">
         <h3 className="section_title">Writing</h3>

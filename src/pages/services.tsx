@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Appearable from '../components/appearable';
+import PageIntro from '../components/page_intro';
 import { GraduationCap, Wrench, Search, CheckCircle, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './services.css';
@@ -17,14 +18,12 @@ export default function Services() {
         <meta property="og:url" content="https://sidecar.software/#/services" />
       </Helmet>
 
-      <div className="services_intro">
-        <p className="services_eyebrow">How we work</p>
-        <h2>We solve hard problems.<br />Two ways.</h2>
-        <p className="services_lead">
-          Whether your team needs to level up their skills or you need an expert partner
-          to carry a project across the finish line — we show up, roll up our sleeves, and get it done.
-        </p>
-      </div>
+      <PageIntro
+        eyebrow="How we work"
+        title={<>We solve hard problems.<br />Two ways.</>}
+        lead="Whether your team needs to level up their skills or you need an expert partner
+          to carry a project across the finish line — we show up, roll up our sleeves, and get it done."
+      />
 
       {/* WORKSHOPS */}
       <div className="service_track">

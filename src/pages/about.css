@@ -1,20 +1,5 @@
 /* About Page Styles */
 
-/* Header Section */
-.about_header {
-    margin-bottom: 4rem;
-    animation: fadeInDown 0.8s ease-out;
-}
-
-.about_header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 2rem;
-    text-align: center;
-    letter-spacing: -0.02em;
-}
-
 .about_intro {
     max-width: 900px;
     margin: 0 auto;
@@ -366,10 +351,6 @@
         gap: 2rem;
     }
 
-    .about_header h2 {
-        font-size: 2.25rem;
-    }
-
     .team_section > h2 {
         font-size: 2rem;
     }
@@ -384,14 +365,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .about_header {
-        margin-bottom: 3rem;
-    }
-
-    .about_header h2 {
-        font-size: 2rem;
-    }
-
     .team_section {
         margin-top: 4rem;
     }
@@ -440,14 +413,6 @@
 }
 
 @media screen and (max-width: 480px) {
-    .about_header {
-        margin-bottom: 2.5rem;
-    }
-
-    .about_header h2 {
-        font-size: 1.75rem;
-    }
-
     .team_section {
         margin-top: 3rem;
     }

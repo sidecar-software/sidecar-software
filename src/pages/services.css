@@ -1,34 +1,3 @@
-/* ─── Intro ─────────────────────────────────────────────────────────── */
-
-.services_intro {
-    max-width: 680px;
-    margin-bottom: 5rem;
-}
-
-.services_eyebrow {
-    font-family: rift-soft, sans-serif;
-    font-size: 0.875rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-secondary);
-    opacity: 0.7;
-    padding-bottom: 0.75rem;
-}
-
-.services_intro h2 {
-    padding-bottom: 1.5rem;
-    line-height: 1.1;
-}
-
-.services_lead {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: var(--color-primary);
-    opacity: 0.85;
-    padding-bottom: 0;
-    max-width: 580px;
-}
-
 /* ─── Track ──────────────────────────────────────────────────────────── */
 
 .service_track {
@@ -275,14 +244,6 @@
 /* ─── Responsive ─────────────────────────────────────────────────────── */
 
 @media screen and (max-width: 768px) {
-    .services_intro {
-        margin-bottom: 3rem;
-    }
-
-    .services_lead {
-        font-size: 1rem;
-    }
-
     .service_track {
         padding: 2rem 1.5rem;
     }
