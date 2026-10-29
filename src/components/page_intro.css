@@ -1,7 +1,7 @@
 /* Shared intro block used at the top of every inner page */
 
 .page_intro {
-    margin-bottom: 5rem;
+    margin-bottom: 3.5rem;
 }
 
 .page_intro_eyebrow {
@@ -50,7 +50,7 @@
 
 @media screen and (max-width: 768px) {
     .page_intro {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
     }
 
     .page_intro_lead {

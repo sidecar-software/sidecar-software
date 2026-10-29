@@ -6,6 +6,8 @@
 .talks_section {
     max-width: 1000px;
     margin: 0 auto 5rem;
+    /* These are <section>s; drop the global section padding */
+    padding: 0;
 }
 
 .section_title {
