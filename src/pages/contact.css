@@ -76,6 +76,7 @@
     font-size: 0.95rem;
     font-weight: 600;
     white-space: nowrap;
+    box-sizing: border-box;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
