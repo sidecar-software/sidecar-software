@@ -27,14 +27,14 @@ const standalonePost = {
 };
 
 const talks = [
-  { id: 'U8whfTS3G8U', title: 'RuPy 2012: Ruby and Elasticsearch',                              date: '2012',              venue: 'RuPy Conference' },
+  { id: 'u-ivLEDC_74', title: 'Semantic Search With Elasticsearch',                             date: 'Mar 2024',          venue: 'Elastic' },
+  { id: 'aREksQ46OnI', title: 'Elastic Observability: The Good, The Bad & The Ugly',            date: 'Mar 2024',          venue: 'Elastic Community' },
+  { id: 'l3mSf0GVhzA', title: 'The Library and the Maze',                                       date: 'Sep 2023',          venue: 'PyCon CZ' },
+  { id: '6XONxxHxxms', title: 'Inheriting code… and I don\'t mean classes',                     date: '2019',              venue: 'PyCon Africa' },
+  { id: 'RAJiFK1bHO0', title: 'Beyond the basics with Elasticsearch',                           date: 'Sep 2015',          venue: 'DjangoCon US' },
   { id: 'pQi4J3xeN2s', title: 'Cloud services beyond infrastructure and OpenStack',             date: '~2015',             venue: 'STX Next' },
   { id: 'XoZDdwz43uQ', title: 'Lessons learned from building Elasticsearch client',            date: 'Jul 2014',          venue: 'EuroPython' },
-  { id: 'RAJiFK1bHO0', title: 'Beyond the basics with Elasticsearch',                           date: 'Sep 2015',          venue: 'DjangoCon US' },
-  { id: '6XONxxHxxms', title: 'Inheriting code… and I don\'t mean classes',                     date: '2019',              venue: 'PyCon Africa' },
-  { id: 'l3mSf0GVhzA', title: 'The Library and the Maze',                                       date: 'Sep 2023',          venue: 'PyCon CZ' },
-  { id: 'aREksQ46OnI', title: 'Elastic Observability: The Good, The Bad & The Ugly',            date: 'Mar 2024',          venue: 'Elastic Community' },
-  { id: 'u-ivLEDC_74', title: 'Semantic Search With Elasticsearch',                             date: 'Mar 2024',          venue: 'Elastic' },
+  { id: 'U8whfTS3G8U', title: 'RuPy 2012: Ruby and Elasticsearch',                              date: '2012',              venue: 'RuPy Conference' },
 ];
 
 export default function Blog() {
