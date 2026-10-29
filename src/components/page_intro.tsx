@@ -12,7 +12,7 @@ export default function PageIntro({ eyebrow, title, lead }: PageIntroProps) {
     <div className="page_intro">
       <p className="page_intro_eyebrow">{eyebrow}</p>
       <h2>{title}</h2>
-      {lead && <p className="page_intro_lead">{lead}</p>}
+      {lead && <div className="page_intro_lead">{lead}</div>}
     </div>
   );
 }

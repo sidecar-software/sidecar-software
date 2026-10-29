@@ -70,13 +70,15 @@ export default function About() {
         <meta property="og:url" content="https://sidecar.software/#/about" />
       </Helmet>
 
-      <PageIntro eyebrow="Who we are" title="About Sidecar" />
-
-      <div className="about_intro">
-        <p>We're a tight-knit team of seasoned engineers based in Prague, with expertise spanning across Western Europe. Our distributed setup combines global technical excellence with personalized service.</p>
-        <p>As an official <strong>Elastic Services Partner since 2024</strong>, we bring deep technical expertise to every engagement. Many of our team members are former Elasticians who worked at the company during its formative years, giving us unparalleled insight into the Elastic Stack and ecosystem.</p>
-        <p>We primarily serve clients across EMEA and North America, but our capabilities extend worldwide.</p>
-      </div>
+      <PageIntro
+        eyebrow="Who we are"
+        title="About Sidecar"
+        lead={<>
+          <p>We're a small team of senior engineers based in Prague, working with clients across EMEA, North America and beyond.</p>
+          <p>We're an official <a href="https://www.elastic.co/" target="_blank" rel="noopener noreferrer"><strong>Elastic Services Partner</strong></a> since 2024, and many of us are former Elasticians who were there in the company's early years.</p>
+          <p>On the OpenSearch side, we're a <a href="https://opensearch.org/long-term-support/" target="_blank" rel="noopener noreferrer"><strong>certified LTS provider</strong></a>, members of the <a href="https://foundation.opensearch.org/" target="_blank" rel="noopener noreferrer"><strong>OpenSearch Software Foundation</strong></a> and <a href="https://www.linuxfoundation.org/" target="_blank" rel="noopener noreferrer"><strong>Linux Foundation</strong></a> since June 2026, and part of the <a href="https://opensearch.org/blog/technical-steering-committee-reflecting-on-our-first-year/" target="_blank" rel="noopener noreferrer"><strong>Search Technical Advisory Group (TAG)</strong></a>.</p>
+        </>}
+      />
 
       <div className="team_section">
         <h2>Meet the Team</h2>

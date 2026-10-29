@@ -35,6 +35,19 @@
     text-align: center;
 }
 
+.page_intro_lead p {
+    padding-bottom: 1rem;
+}
+
+.page_intro_lead p:last-child {
+    padding-bottom: 0;
+}
+
+.page_intro_lead strong {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
 /* Tuck the eyebrow directly under the collapsed SIDECAR logo, as it sits on
    mobile: the logo ends at 6rem, content otherwise starts at 9rem. */
 @media screen and (min-width: 769px) {
