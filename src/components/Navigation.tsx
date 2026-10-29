@@ -1,9 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { page_links } from "./links";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Close the menu only once the new route has rendered, so the old page
+  // never flashes between the menu hiding and the route changing
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   // Prevent scroll when the menu is open on mobile
   useEffect(() => {
@@ -41,7 +48,10 @@ export default function Navigation() {
             <NavLink
               to={href}
               className={({ isActive }) => (isActive ? "active" : undefined)}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                // Same page: no route change will close the menu, so close it here
+                if (location.pathname === href) setIsMenuOpen(false);
+              }}
             >
               {/* Prompt and cursor only show in the mobile terminal-style menu */}
               <span className="nav_prompt" aria-hidden="true">&gt;</span>
