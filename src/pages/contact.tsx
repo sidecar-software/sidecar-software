@@ -1,7 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { Helmet } from 'react-helmet-async';
 import Appearable from "../components/appearable";
-import { Mail, User, MessageSquare, Send, CheckCircle } from 'lucide-react';
+import { Mail, User, MessageSquare, Send, CheckCircle, CalendarDays, ArrowUpRight } from 'lucide-react';
 import './contact.css';
 
 export default function ContactUs() {
@@ -88,6 +88,28 @@ export default function ContactUs() {
             </button>
           </form>
         )}
+
+        <div className="contact_divider">
+          <span>or</span>
+        </div>
+
+        <a
+          className="schedule_call"
+          href="https://calendly.com/bojan-sidecar/intro-call-with-sidecar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="schedule_call_icon">
+            <CalendarDays size={24} />
+          </span>
+          <span className="schedule_call_text">
+            <strong>Prefer to talk?</strong>
+            <span>Book an intro call with us at a time that works for you.</span>
+          </span>
+          <span className="schedule_call_cta">
+            Schedule a call <ArrowUpRight size={18} />
+          </span>
+        </a>
       </div>
     </Appearable>
   );
